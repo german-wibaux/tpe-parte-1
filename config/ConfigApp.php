@@ -10,7 +10,7 @@ class ConfigApp
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
     public static $ACTIONS = [
-      ''=> 'CursosController#Home',
+      ''=> 'MateriasController#Home',
       'home'=> 'MateriasController#Home',
       // 'javito'=> 'TareasController#Home',
       // 'borrar'=> 'TareasController#BorrarTarea',
