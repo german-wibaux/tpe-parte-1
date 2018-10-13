@@ -1,10 +1,5 @@
 <?php
 
-// define('HOME', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
-// define('LOGIN', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/login');
-// define('LOGOUT', 'Location: //'.$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]). '/logout');
-
-
 class ConfigApp
 {
     public static $ACTION = 'action';
