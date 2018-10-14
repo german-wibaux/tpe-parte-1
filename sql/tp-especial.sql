@@ -67,3 +67,17 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE `modalidad` ( `idModalidad` int(11) NOT NULL AUTO_INCREMENT,
+`nombreModalidad` varchar(255) NOT NULL,
+PRIMARY KEY (idModalidad) )
+ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `materia` ( `idMateria` int(11) NOT NULL AUTO_INCREMENT,
+`nombreMateria` varchar(255) NOT NULL,
+`idModalidad` int(11) NOT NULL,
+`descripcionMateria` varchar(255) NOT NULL,
+`anio` int(11) NOT NULL,
+`division` int(11) NOT NULL,
+PRIMARY KEY (idMateria) )
+ENGINE=InnoDB DEFAULT CHARSET=latin1
