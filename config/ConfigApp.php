@@ -8,7 +8,7 @@ class ConfigApp
       ''=> 'MateriasController#Materias',
       'home'=> 'MateriasController#Materias',
       // 'javito'=> 'TareasController#Home',
-      // 'borrar'=> 'TareasController#BorrarTarea',
+      'borrar'=> 'MateriasController#BorrarMateria',
       // 'completada'=> 'TareasController#CompletarTarea',
       // 'editar'=> 'TareasController#EditarTarea',
       // 'guardarEditar'=> 'TareasController#GuardarEditarTarea',

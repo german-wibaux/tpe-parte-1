@@ -19,7 +19,14 @@ class MateriasModel
 
   function GetMaterias(){
 
-      $sentencia = $this->db->prepare( "select * from Materias");
+      $sentencia = $this->db->prepare( "select * from materias");
+      $sentencia->execute();
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetModalidades(){
+
+      $sentencia = $this->db->prepare( "select * from modalidad");
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }

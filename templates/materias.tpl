@@ -6,7 +6,7 @@
       <ul class="list-group">
             {foreach from=$Materias item=materia}
               {if $materia['anio'] == 1 && $materia['division'] == 1}
-                <li class="list-group-item">{$materia['nombreMateria']} ----- {$materia['descripcionMateria']}<a href="borrar/{$materia['idMateria']}">BORRAR</a></li>
+                <li class="list-group-item">{$materia['nombreMateria']} ----- {$materia['descripcionMateria']}<a href="editar/{$materia['idMateria']}">EDITAR</a><a href="borrar/{$materia['idMateria']}">BORRAR</a></li>
               {/if}
             {/foreach}
       </ul>
@@ -22,9 +22,13 @@
         <div class="form-group">
           <label for="modalidadForm">Modalidad</label>
             <select class="form-control" id="modalidadForm" name="modalidadForm">
-              <option value="1">Modalidad 1</option>
+<!--              <option value="1">Modalidad 1</option>
               <option value="2">Modalidad 2</option>
-              <option value="3">Modalidad 3</option>
+              <option value="3">Modalidad 3</option>-->
+              {foreach from=$Modalidades item=modalidad}
+                <option value="{$modalidad['idModalidad']}">{$modalidad['nombreModalidad']}</option>
+              {/foreach}
+
           </select>
 <!--          <input type="text" class="form-control" id="descripcionForm" name="descripcionForm"> -->
         </div>
