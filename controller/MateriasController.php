@@ -20,7 +20,7 @@ class MateriasController extends Controller
     $this->Titulo = "Lista de Materias";
   }
 
-  function Home(){
+  function Materias(){
       $Materias = $this->model->GetMaterias();
       $this->view->Mostrar($this->Titulo, $Materias);
   }

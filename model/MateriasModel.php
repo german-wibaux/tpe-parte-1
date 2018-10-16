@@ -30,13 +30,13 @@ class MateriasModel
       $sentencia->execute(array($idMateria));
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
-/*
-  function InsertarTarea($titulo,$descripcion,$completada){
 
-    $sentencia = $this->db->prepare("INSERT INTO tarea(titulo, descripcion, completada) VALUES(?,?,?)");
-    $sentencia->execute(array($titulo,$descripcion,$completada));
+  function InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division){
+
+    $sentencia = $this->db->prepare("INSERT INTO materias(nombreMateria, idModalidad, descripcionMateria, anio, division) VALUES(?,?,?,?,?)");
+    $sentencia->execute(array($nombre,$modalidad,$descripcion,$anio,$division));
   }
-
+/*
   function BorrarTarea($idTarea){
 
     $sentencia = $this->db->prepare( "delete from tarea where id=?");
