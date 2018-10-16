@@ -1,0 +1,60 @@
+<?php
+/**
+ *
+ */
+class MateriasModel
+{
+  private $db;
+
+  function __construct()
+  {
+    $this->db = $this->Connect();
+  }
+
+  function Connect(){
+    return new PDO('mysql:host=localhost;'
+    .'dbname=tp-especial;charset=utf8'
+    , 'root', '');
+  }
+
+  function GetMaterias(){
+
+      $sentencia = $this->db->prepare( "select * from Materias");
+      $sentencia->execute();
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetMateria($idMateria){
+
+      $sentencia = $this->db->prepare( "select * from materias where idMateria=?");
+      $sentencia->execute(array($idMateria));
+      return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
+/*
+  function InsertarTarea($titulo,$descripcion,$completada){
+
+    $sentencia = $this->db->prepare("INSERT INTO tarea(titulo, descripcion, completada) VALUES(?,?,?)");
+    $sentencia->execute(array($titulo,$descripcion,$completada));
+  }
+
+  function BorrarTarea($idTarea){
+
+    $sentencia = $this->db->prepare( "delete from tarea where id=?");
+    $sentencia->execute(array($idTarea));
+  }
+
+  function CompletarTarea($id_tarea){
+
+    $sentencia = $this->db->prepare( "update tarea set completada=1 where id=?");
+    $sentencia->execute(array($id_tarea));
+  }
+
+  function GuardarEditarTarea($titulo,$descripcion,$completada,$id){
+    $sentencia = $this->db->prepare( "update tarea set titulo = ?, descripcion = ?, completada = ? where id=?");
+    $sentencia->execute(array($titulo,$descripcion,$completada,$id));
+  }
+  */
+}
+
+
+ ?>
