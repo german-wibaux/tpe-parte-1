@@ -23,7 +23,7 @@ class MateriasView
     $this->Smarty->display('templates/materias.tpl');
   }
 
-  function Home($Titulo, $Materias){
+  function Home($Titulo){
 
     $this->Smarty->assign('Home',$Titulo); // El 'Titulo' del assign puede ser cualquier valor
     //$this->Smarty->assign('Materias',$Materias);

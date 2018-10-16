@@ -20,13 +20,13 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="home">Home </a>
+        <a class="nav-link" href="{HOME}">Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="materias">Materias</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login">Login</a>
+        <a class="nav-link" href="{LOGIN}">Login</a>
       </li>
 
       {if $username != '' } 

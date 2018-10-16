@@ -22,7 +22,7 @@ class MateriasController extends Controller
 
   function Home(){
     
-    $this->view->Home($this->Titulo, $Materias);     
+    $this->view->Home($this->Titulo);     
   }
 
   function Materias(){
