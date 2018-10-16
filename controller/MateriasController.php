@@ -20,13 +20,20 @@ class MateriasController extends Controller
     $this->Titulo = "Lista de Materias";
   }
 
+  function Home(){
+    
+    $this->view->Home($this->Titulo, $Materias);     
+  }
+
   function Materias(){
       $Materias = $this->model->GetMaterias();
-      $this->view->Mostrar($this->Titulo, $Materias);
+      $this->view->Mostrar($this->Titulo, $Materias);     
   }
   function Modalidades(){
     $Modalidades = $this->model->GetModalidades();
+    
     $this->view->Mostrar($this->Titulo, $Modalidades);
+    
   }
 
   function InsertMateria(){
@@ -35,10 +42,10 @@ class MateriasController extends Controller
     $descripcion = $_POST["descripcionForm"];
     $anio = $_POST["anioForm"];
     $division = $_POST["divisionForm"];
-
+    
     $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
 
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    // header('Location: '.HOME);
   }
 
   function BorrarMateria($param){
@@ -46,9 +53,29 @@ class MateriasController extends Controller
     header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
-  // function estaLogueado () {
-  //   echo $_SESSION["User"];
-  // }
+  function EditarMateria($param){
+    $id_materia = $param[0];
+
+    $Materia = $this->model->GetMateria($id_materia);
+    $this->view->MostrarEditarMateria("Editar Materia", $Materia);
+  }
+
+  function GuardarEditarMateria(){
+    $id_materia = $_POST["idForm"];
+    $titulo = $_POST["tituloForm"];
+    $descripcion = $_POST["descripcionForm"];
+    $modalidad = $_POST["modalidadForm"];
+    $descripcion = $_POST["descripcionForm"];
+    $anio = $_POST["anioForm"];
+    $division = $_POST["divisionForm"];
+
+
+    
+
+    $this->model->GuardarEditarMateria($titulo,$descripcion,$id_materia);
+
+    header("Location: ".HOME);
+  }
 
 }
 

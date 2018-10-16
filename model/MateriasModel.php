@@ -48,18 +48,13 @@ class MateriasModel
     $sentencia = $this->db->prepare( "delete from materias where idMateria=?");
     $sentencia->execute(array($idMateria));
   }
-/*
-  function CompletarTarea($id_tarea){
 
-    $sentencia = $this->db->prepare( "update tarea set completada=1 where id=?");
-    $sentencia->execute(array($id_tarea));
-  }
-
-  function GuardarEditarTarea($titulo,$descripcion,$completada,$id){
+  function GuardarEditarMateria($titulo,$descripcion,$id){
     $sentencia = $this->db->prepare( "update tarea set titulo = ?, descripcion = ?, completada = ? where id=?");
-    $sentencia->execute(array($titulo,$descripcion,$completada,$id));
+    $sentencia->execute(array($titulo,$modalidad,$descripcion,$anio,$division,$id));
   }
-  */
+  
+  
 }
 
 

@@ -1,18 +1,20 @@
 {include file="header.tpl"}
 
-    
+    <h1>{$Titulo}</h1>
+
+
     <div class="container">
-      
-      <h2>Alta de Materias</h2>
-      <form method="post" action="agregar">
+      <h2>Formulario</h2>
+      <form method="post" action="guardarEditar">
+        <input type="hidden" class="form-control" id="idForm" name="idForm" value="{$Materia["id"]}">
         <div class="form-group">
-          <label for="nombreForm">Nombre</label>
-          <input type="text" class="form-control" id="nombreForm" name="nombreForm">
+          <label for="tituloForm">Nombre materia</label>
+          <input type="text" class="form-control" id="tituloForm" name="tituloForm" value="{$Materia["nombreMateria"]}">
         </div>
-        
+
         <div class="form-group">
           <label for="modalidadForm">Modalidad</label>
-            <select class="form-control" id="modalidadForm" name="modalidadForm">
+            <select class="form-control" id="modalidadForm" name="modalidadForm" value="{$Materia["idModalidad"]}" >
               <option value="1">Modalidad 1</option>
               <option value="2">Modalidad 2</option>
               <option value="3">Modalidad 3</option>
@@ -23,46 +25,31 @@
           </select>
 <!--          <input type="text" class="form-control" id="descripcionForm" name="descripcionForm"> -->
         </div>
+
         <div class="form-group">
           <label for="descripcionForm">Descripcion</label>
-          <input type="text" class="form-control" id="descripcionForm" name="descripcionForm">
+          <input type="text" class="form-control" id="descripcionForm" name="descripcionForm" value="{$Materia["descripcionMateria"]}">
         </div>
+
         <div class="form-group">
           <label for="anioForm">Año</label>
-            <select class="form-control" id="anioForm" name="anioForm">
+            <select class="form-control" id="anioForm" name="anioForm" value="{$Materia["anio"]}" >
               <option value="1">Primer Año</option>
               <option value="2">Segundo Año</option>
               <option value="3">Tercer Año</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="divisionForm">Division</label>
-            <select class="form-control" id="divisionForm" name="divisionForm">
+            <select class="form-control" id="divisionForm" name="divisionForm" value="{$Materia["division"]}" >
               <option value="1">Primera</option>
               <option value="2">Segunda</option>
               <option value="3">Tercera</option>
           </select>
         </div>
-
-        <button type="submit" class="btn btn-primary">Crear Tarea</button>
+             
+        <button type="submit" class="btn btn-primary">Editar Materia</button>
       </form>
-    
-    
-    
-    <h1>{$Titulo}</h1>
-
-    <div class="container">
-      <ul class="list-group">
-            {foreach from=$Materias item=materia}
-              {* {if $materia['anio'] == 1 && $materia['division'] == 1} *}
-                <li class="list-group-item">{$materia['nombreMateria']} ----- {$materia['descripcionMateria']}<a href="editar/{$materia['idMateria']}">EDITAR</a><a href="borrar/{$materia['idMateria']}">BORRAR</a></li>
-              {* {/if} *}
-            {/foreach}
-      </ul>
-    
-</div>
-    
-
-
-    
+    </div>
 {include file="footer.tpl"}
