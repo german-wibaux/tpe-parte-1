@@ -6,7 +6,7 @@
     <div class="container">
       <h2>Formulario</h2>
       <form method="post" action="{$home}/guardarEditar">
-        <input type="hidden" class="form-control" id="idForm" name="idForm" value="{$Materia["id"]}">
+        <input type="hidden" class="form-control" id="idForm" name="idForm" value="{$Materia["idMateria"]}">
         <div class="form-group">
           <label for="tituloForm">Nombre materia</label>
           <input type="text" class="form-control" id="tituloForm" name="tituloForm" value="{$Materia["nombreMateria"]}">

@@ -49,8 +49,8 @@ class MateriasModel
     $sentencia->execute(array($idMateria));
   }
 
-  function GuardarEditarMateria($titulo,$descripcion,$id){
-    $sentencia = $this->db->prepare( "update tarea set titulo = ?, descripcion = ?, completada = ? where id=?");
+  function GuardarEditarMateria($titulo,$modalidad,$descripcion,$anio,$division,$id){    
+    $sentencia = $this->db->prepare( "update materias set nombreMateria = ?, idModalidad = ?,  descripcionMateria = ?, anio = ?, division = ? where idMateria=?");
     $sentencia->execute(array($titulo,$modalidad,$descripcion,$anio,$division,$id));
   }
   
