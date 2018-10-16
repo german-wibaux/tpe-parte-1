@@ -36,13 +36,14 @@ class MateriasModel
     $sentencia = $this->db->prepare("INSERT INTO materias(nombreMateria, idModalidad, descripcionMateria, anio, division) VALUES(?,?,?,?,?)");
     $sentencia->execute(array($nombre,$modalidad,$descripcion,$anio,$division));
   }
-/*
-  function BorrarTarea($idTarea){
 
-    $sentencia = $this->db->prepare( "delete from tarea where id=?");
-    $sentencia->execute(array($idTarea));
+  function BorrarMateria($idMateria){
+
+    echo '<script language="javascript">alert("juas");</script>'; 
+    $sentencia = $this->db->prepare( "delete from materias where idMateria=?");
+    $sentencia->execute(array($idMateria));
   }
-
+/*
   function CompletarTarea($id_tarea){
 
     $sentencia = $this->db->prepare( "update tarea set completada=1 where id=?");

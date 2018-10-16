@@ -25,6 +25,23 @@ class MateriasController extends Controller
       $this->view->Mostrar($this->Titulo, $Materias);
   }
 
+  function InsertMateria(){
+    $nombre = $_POST["nombreForm"];
+    $modalidad = $_POST["modalidadForm"];
+    $descripcion = $_POST["descripcionForm"];
+    $anio = $_POST["anioForm"];
+    $division = $_POST["divisionForm"];
+
+    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
+
+    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  }
+
+  function BorrarMateria($param){
+    $this->model->BorrarMateria($param[0]);
+    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+  }
+
   // function estaLogueado () {
   //   echo $_SESSION["User"];
   // }
