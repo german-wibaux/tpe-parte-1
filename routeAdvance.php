@@ -47,13 +47,13 @@ if(isset($_GET['action'])){
 //      echo 'false';
       //$controller->Home();
       if ($action == 'agregar') {
-  $controller->InsertMateria();
-}elseif ($action == 'borrar') {
-    echo 'entro aca' . $partesURL[1] . $action;
-//  $controller->BorrarMateria($partesURL[1]);
-}elseif ($action == 'completada') {
-    $controller->CompletarTarea($partesURL[1]);
-}
+        $controller->InsertMateria();
+      }elseif ($action == 'borrar') {
+        //echo 'entro aca' . $partesURL[1] . $action;
+        $controller->BorrarMateria($partesURL[1]);
+      }elseif ($action == 'completada') {
+        $controller->CompletarTarea($partesURL[1]);
+      }
 
     }
 }

@@ -38,8 +38,6 @@ class MateriasModel
   }
 
   function BorrarMateria($idMateria){
-
-    echo '<script language="javascript">alert("juas");</script>'; 
     $sentencia = $this->db->prepare( "delete from materias where idMateria=?");
     $sentencia->execute(array($idMateria));
   }
