@@ -102,7 +102,7 @@ class MateriasController extends Controller
   function GuardarEditarModalidad(){
     $id_modalidad = $_POST["idForm"];
 
-    $modalidad = $_POST["modalidadForm"];
+    $modalidad = $_POST["tituloForm"];
 
     $this->model->GuardarEditarModalidad($modalidad,$id_modalidad);
 
