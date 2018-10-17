@@ -26,6 +26,11 @@ class LoginController extends Controller
 
   }
 
+  function Home(){
+    
+    $this->view->Home($this->Titulo);     
+  }
+
   function logout(){
     session_start();
     session_destroy();
@@ -33,7 +38,7 @@ class LoginController extends Controller
   }
 
   function verificarLogin(){
-  
+    
       $user = $_POST["usuarioId"];
       $pass = $_POST["passwordId"];
       $dbUser = $this->model->getUser($user);
@@ -42,13 +47,16 @@ class LoginController extends Controller
         //   $password = '123456';
         //   $hash = password_hash($password, PASSWORD_DEFAULT);
         //  echo $hash;
-         
+        //echo  $dbUser[0]['pass'];
           if (password_verify($pass, $dbUser[0]['pass'])){
               //mostrar lista de tareas
-             echo 'entro pass valida';
+            // echo 'entro pass valida';
               session_start();
               $_SESSION["User"] = $user;
-              header("Location: ".HOME);
+              $_SESSION['LAST_ACTIVITY'] = time();
+              //echo $_SESSION["User"];
+             header("Location: ".HOME);
+             die();
           }else{
             $this->view->mostrarLogin("Contraseña incorrecta");
 

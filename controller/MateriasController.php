@@ -13,7 +13,7 @@ class MateriasController extends Controller
   function __construct()
   {
 
-    //parent::__construct();
+    parent::__construct();
 
     $this->view = new MateriasView();
     $this->model = new MateriasModel();
@@ -74,7 +74,7 @@ class MateriasController extends Controller
 
     $this->model->GuardarEditarMateria($titulo,$modalidad,$descripcion,$anio,$division,$id_materia);
 
-    //header("Location: ".HOME);
+    header("Location: ".HOME);
   }
 
 }

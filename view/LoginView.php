@@ -1,4 +1,5 @@
 <?php
+session_start();
 class LoginView
 {
   private $Smarty;
@@ -8,6 +9,7 @@ class LoginView
     $this->Smarty = new Smarty();
   }
 
+  
 
   function mostrarLogin($message = ''){
   
@@ -16,6 +18,9 @@ class LoginView
 
     $this->Smarty->display('templates/login.tpl');
   }
+
+  
+
 }
 
  ?>
