@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 error_reporting(E_ALL ^ E_NOTICE);
 
 require('libs/Smarty.class.php');
@@ -13,8 +13,11 @@ class MateriasView
 
   function __construct()
   {
+    
     $this->Smarty = new Smarty();
     $this->username = $_SESSION['User'];
+    // echo 'user';
+    // echo  $this->username;
   }
 
   function MostrarMaterias($Titulo, $Materias, $Modalidades){
@@ -23,6 +26,7 @@ class MateriasView
     $this->Smarty->assign('Materias',$Materias);
     $this->Smarty->assign('Modalidades',$Modalidades);
     $this->Smarty->assign('username',$this->username);
+    
     //$smarty->debugging = true;
     $this->Smarty->display('templates/materias.tpl');
   }

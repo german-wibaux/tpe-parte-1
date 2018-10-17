@@ -3,9 +3,9 @@
 require_once  "./view/MateriasView.php";
 require_once  "./model/MateriasModel.php";
 include_once 'controller/Controller.php';
-// require_once  "SecuredController.php";
+ require_once  "controller/SecuredController.php";
 
-class MateriasController extends Controller
+class MateriasController extends SecuredController
 {
 
   private $Titulo;
@@ -20,22 +20,16 @@ class MateriasController extends Controller
     $this->Titulo = "Lista de Materias";
   }
 
-  function Home(){
-    
-    $this->view->Home($this->Titulo);     
-  }
+ 
+ 
+
 
   function Materias(){
       $Materias = $this->model->GetMaterias();
       $Modalidades = $this->model->GetModalidades();
       $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades);     
   }
-  function Modalidades(){
-    $Modalidades = $this->model->GetModalidades();
-    
-    $this->view->Mostrar($this->Titulo, $Modalidades);
-    
-  }
+  
 
   function InsertMateria(){
     $nombre = $_POST["nombreForm"];

@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    {* <base href="{$basehref}"> *}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -20,16 +21,18 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="{HOME}">Home </a>
+        <a class="nav-link" href="{HOMEMATERIAS}">Materias </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="materias">Materias</a>
-      </li>
+      {if $username  } 
+        <li class="nav-item">
+          <a class="nav-link" href="materias">Administración</a>
+        </li>
+      {/if}
       <li class="nav-item">
         <a class="nav-link" href="{LOGIN}">Login</a>
       </li>
 
-      {if $username } 
+      {if $username  } 
         <li class="nav-item">
           <a class="nav-link disabled" href="logout">Logout  </a>
           

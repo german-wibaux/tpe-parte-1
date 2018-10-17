@@ -6,7 +6,7 @@ require_once  "./model/UsuarioModel.php";
 include_once 'controller/Controller.php';
 
 
-class LoginController extends Controller
+class LoginController // extends Controller
 {
   // private $view;
   // private $model;
@@ -14,7 +14,7 @@ class LoginController extends Controller
 
   function __construct()
   {
-    parent::__construct();
+    //parent::__construct();
     $this->view = new LoginView();
     $this->model = new UsuarioModel();
     $this->Titulo = "Login";
@@ -26,20 +26,22 @@ class LoginController extends Controller
 
   }
 
-  function Home(){
+  // function Home(){
     
-    $this->view->Home($this->Titulo);     
-  }
+  //   $this->view->Home($this->Titulo);     
+  // }
 
   function logout(){
     session_start();
     session_destroy();
-    header('Location: '.LOGIN);
+    header('Location: '.LOGIN);    
+    die(); // buena practica hacer logout
   }
 
   function verificarLogin(){
     
       $user = $_POST["usuarioId"];
+      //echo $user;
       $pass = $_POST["passwordId"];
       $dbUser = $this->model->getUser($user);
       
@@ -53,9 +55,10 @@ class LoginController extends Controller
             // echo 'entro pass valida';
               session_start();
               $_SESSION["User"] = $user;
+              //$_SESSION['ID'] = $user["id"];
               $_SESSION['LAST_ACTIVITY'] = time();
               //echo $_SESSION["User"];
-             header("Location: ".HOME);
+            header("Location: ".HOME);
              die();
           }else{
             $this->view->mostrarLogin("Contraseña incorrecta");

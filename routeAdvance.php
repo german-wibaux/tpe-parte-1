@@ -3,9 +3,10 @@
 
 require_once "config/ConfigApp.php";
 require_once "controller\MateriasController.php";
+require_once "controller\VisitanteController.php";
 // require_once "controller\UsuarioController.php";
 require_once "controller\LoginController.php";
-// require_once "controller\SecuredController.php";
+require_once "controller\SecuredController.php";
 
 function parseURL($url)
 {
