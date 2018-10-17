@@ -27,7 +27,8 @@ class MateriasController extends Controller
 
   function Materias(){
       $Materias = $this->model->GetMaterias();
-      $this->view->Mostrar($this->Titulo, $Materias);     
+      $Modalidades = $this->model->GetModalidades();
+      $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades);     
   }
   function Modalidades(){
     $Modalidades = $this->model->GetModalidades();
@@ -45,7 +46,7 @@ class MateriasController extends Controller
     
     $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
 
-    // header('Location: '.HOME);
+    header('Location: '.HOME);
   }
 
   function BorrarMateria($param){

@@ -17,10 +17,11 @@ class MateriasView
     $this->username = $_SESSION['User'];
   }
 
-  function Mostrar($Titulo, $Materias){
+  function MostrarMaterias($Titulo, $Materias, $Modalidades){
 
     $this->Smarty->assign('Titulo',$Titulo); 
     $this->Smarty->assign('Materias',$Materias);
+    $this->Smarty->assign('Modalidades',$Modalidades);
     $this->Smarty->assign('username',$this->username);
     //$smarty->debugging = true;
     $this->Smarty->display('templates/materias.tpl');
