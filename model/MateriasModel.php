@@ -38,6 +38,13 @@ class MateriasModel
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
 
+  function GetModalidad($idModalidad){
+
+      $sentencia = $this->db->prepare( "select * from modalidad where idModalidad=?");
+      $sentencia->execute(array($idModalidad));
+      return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
+
   function InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division){
 
     $sentencia = $this->db->prepare("INSERT INTO materias(nombreMateria, idModalidad, descripcionMateria, anio, division) VALUES(?,?,?,?,?)");
@@ -48,18 +55,29 @@ class MateriasModel
     $sentencia = $this->db->prepare( "delete from materias where idMateria=?");
     $sentencia->execute(array($idMateria));
   }
-/*
-  function CompletarTarea($id_tarea){
 
-    $sentencia = $this->db->prepare( "update tarea set completada=1 where id=?");
-    $sentencia->execute(array($id_tarea));
+  function GuardarEditarMateria($titulo,$modalidad,$descripcion,$anio,$division,$id){
+    $sentencia = $this->db->prepare( "update materias set nombreMateria = ?, idModalidad = ?,  descripcionMateria = ?, anio = ?, division = ? where idMateria=?");
+    $sentencia->execute(array($titulo,$modalidad,$descripcion,$anio,$division,$id));
   }
 
-  function GuardarEditarTarea($titulo,$descripcion,$completada,$id){
-    $sentencia = $this->db->prepare( "update tarea set titulo = ?, descripcion = ?, completada = ? where id=?");
-    $sentencia->execute(array($titulo,$descripcion,$completada,$id));
+  function InsertarModalidad($nombre){
+
+    $sentencia = $this->db->prepare("INSERT INTO modalidad(nombreModalidad) VALUES(?)");
+    $sentencia->execute(array($nombre));
   }
-  */
+
+  function BorrarModalidad($idModalidad){
+    $sentencia = $this->db->prepare( "delete from modalidad where idModalidad=?");
+    $sentencia->execute(array($idModalidad));
+  }
+
+  function GuardarEditarModalidad($modalidad,$id){
+    $sentencia = $this->db->prepare( "update modalidad set nombreModalidad = ? where idModalidad=?");
+    $sentencia->execute(array($modalidad,$id));
+  }
+
+
 }
 
 

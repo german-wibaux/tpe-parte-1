@@ -1,30 +1,21 @@
 {include file="header.tpl"}
 
-    <h1>{$Titulo}</h1>
 
     <div class="container">
-      <ul class="list-group">
-            {foreach from=$Materias item=materia}
-              {if $materia['anio'] == 1 && $materia['division'] == 1}
-                <li class="list-group-item">{$materia['nombreMateria']} ----- {$materia['descripcionMateria']}<a href="editar/{$materia['idMateria']}">EDITAR</a><a href="borrar/{$materia['idMateria']}">BORRAR</a></li>
-              {/if}
-            {/foreach}
-      </ul>
-    </div>
 
-    <div class="container">
       <h2>Alta de Materias</h2>
       <form method="post" action="agregar">
         <div class="form-group">
           <label for="nombreForm">Nombre</label>
           <input type="text" class="form-control" id="nombreForm" name="nombreForm">
         </div>
+
         <div class="form-group">
           <label for="modalidadForm">Modalidad</label>
             <select class="form-control" id="modalidadForm" name="modalidadForm">
-<!--              <option value="1">Modalidad 1</option>
+              {* <option value="1">Modalidad 1</option>
               <option value="2">Modalidad 2</option>
-              <option value="3">Modalidad 3</option>-->
+              <option value="3">Modalidad 3</option> *}
               {foreach from=$Modalidades item=modalidad}
                 <option value="{$modalidad['idModalidad']}">{$modalidad['nombreModalidad']}</option>
               {/foreach}
@@ -53,7 +44,55 @@
           </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Crear Tarea</button>
+        <button type="submit" class="btn btn-primary">Crear Materia</button>
       </form>
+
+
+
+    <h1>{$Titulo}</h1>
+
+    <div class="container">
+      <ul class="list-group">
+            {foreach from=$Materias item=materia}
+              {* {if $materia['anio'] == 1 && $materia['division'] == 1} *}
+                <li class="list-group-item">{$materia['nombreMateria']} ----- {$materia['descripcionMateria']}<a href="editar/{$materia['idMateria']}">EDITAR</a><a href="borrar/{$materia['idMateria']}">BORRAR</a></li>
+              {* {/if} *}
+            {/foreach}
+      </ul>
+
+</div>
+
+<!-- Alta de modalidades -->
+
+<div class="container">
+
+  <h2>Alta de Modalidades</h2>
+  <form method="post" action="agregarModalidad">
+    <div class="form-group">
+      <label for="nombreModalidadForm">Nombre</label>
+      <input type="text" class="form-control" id="nombreModalidadForm" name="nombreModalidadForm">
     </div>
+
+
+    <button type="submit" class="btn btn-primary">Crear Modalidad</button>
+  </form>
+
+<h1>{$Titulo}</h1>
+
+<div class="container">
+  <ul class="list-group">
+        {foreach from=$Modalidades item=modalidad}
+          {* {if $materia['anio'] == 1 && $materia['division'] == 1} *}
+            <li class="list-group-item">{$modalidad['nombreModalidad']} ----- <a href="editarModalidad/{$modalidad['idModalidad']}">EDITAR</a><a href="borrarModalidad/{$modalidad['idModalidad']}">BORRAR</a></li>
+          {* {/if} *}
+        {/foreach}
+  </ul>
+
+</div>
+
+
+
+
+<!-- Fin Alta de Modalidades -->
+
 {include file="footer.tpl"}
