@@ -21,6 +21,7 @@ class MateriasView
     $this->Smarty->assign('Materias',$Materias);
     //$smarty->debugging = true;
     $this->Smarty->display('templates/materias.tpl');
+    
   }
 /*
   function MostrarEditarTarea($Titulo, $Tarea){
