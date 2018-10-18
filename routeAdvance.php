@@ -4,7 +4,6 @@
 require_once "config/ConfigApp.php";
 require_once "controller\MateriasController.php";
 require_once "controller\VisitanteController.php";
-// require_once "controller\UsuarioController.php";
 require_once "controller\LoginController.php";
 require_once "controller\SecuredController.php";
 
@@ -17,26 +16,17 @@ function parseURL($url)
 }
 
 if(isset($_GET['action'])){
-   #$urlData[ACTION] = borrar
-   #$urlData[PARAMS] = [1,2,3,4]
-   //echo 'controller';
 
     $urlData = parseURL($_GET['action']);
-    //echo $urlData[ConfigApp::$ACTION];
     $action = $urlData[ConfigApp::$ACTION]; //home
-
-    $partesURL = explode('/', $_GET['action']); //La utilizo para traer valor de id
+    $partesURL = explode('/', $_GET['action']); //Se obtiene el valor de id
 
     
     if(array_key_exists($action,ConfigApp::$ACTIONS)){
         $params = $urlData[ConfigApp::$PARAMS];
-        $action = explode('#',ConfigApp::$ACTIONS[$action]); //Array[0] -> TareasController [1] -> BorrarTarea
-        //echo $action[0];
-        $controller =  new $action[0]();
-        
-        
+        $action = explode('#',ConfigApp::$ACTIONS[$action]);
+        $controller =  new $action[0]();       
         $metodo = $action[1];
-
        
         if(isset($params) &&  $params != null){
             $controller->$metodo($params);
