@@ -28,7 +28,7 @@
       </li>
       
         <li class="nav-item">
-          <a class="nav-link" href="administracion">Administración</a>
+          <a class="nav-link" href="{ADMINISTRACION}">Administración</a>
         </li>
       
       <li class="nav-item">

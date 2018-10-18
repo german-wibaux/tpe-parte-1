@@ -15,7 +15,7 @@
 
           <div class="form-group">
             <label for="modalidadForm">Modalidad</label>
-              <select class="form-control" id="modalidadForm" name="modalidadForm" value="{$Materia["idModalidad"]}" >
+              <select class="form-control" id="{$modalidad['idModalidad']}" name="modalidadForm" value="{$Materia["idModalidad"]}" >
                 {* <option value="1">Modalidad 1</option>
                   <option value="2">Modalidad 2</option>
                   <option value="3">Modalidad 3</option> *}
