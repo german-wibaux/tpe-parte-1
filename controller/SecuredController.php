@@ -19,8 +19,8 @@ class SecuredController extends Controller
             //echo $_SESSION['User'];
         }
         else {
-           //header('Location: '.LOGIN);
-           //die();
+           header('Location: '.LOGIN);
+           die();
           }
 }
 

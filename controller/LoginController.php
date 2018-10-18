@@ -6,7 +6,7 @@ require_once  "./model/UsuarioModel.php";
 include_once 'controller/Controller.php';
 
 
-class LoginController // extends Controller
+class LoginController extends Controller
 {
   // private $view;
   // private $model;

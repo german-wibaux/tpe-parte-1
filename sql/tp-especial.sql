@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tp-especial`
 --
-CREATE OR REPLACE DATABASE `tp-especial`;
+CREATE DATABASE `tp-especial`;
 
 USE `tp-especial`;
 -- --------------------------------------------------------

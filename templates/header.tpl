@@ -23,11 +23,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="{HOMEMATERIAS}">Materias </a>
       </li>
-      {if $username  } 
+      {* {if $username  }  *}
         <li class="nav-item">
           <a class="nav-link" href="materias">Administración</a>
         </li>
-      {/if}
+      {* {/if} *}
       <li class="nav-item">
         <a class="nav-link" href="{LOGIN}">Login</a>
       </li>
@@ -45,4 +45,10 @@
   </div>
 </nav>
   </div>
+
+
+
+
+
+  
   

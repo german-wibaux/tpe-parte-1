@@ -11,9 +11,7 @@ require_once "controller\SecuredController.php";
 function parseURL($url)
 {
   $urlExploded = explode('/', $url);
-  $arrayReturn[ConfigApp::$ACTION] = $urlExploded[0];
-
-  #borrar/1/2/3/4
+  $arrayReturn[ConfigApp::$ACTION] = $urlExploded[0];  
   $arrayReturn[ConfigApp::$PARAMS] = isset($urlExploded[1]) ? array_slice($urlExploded,1) : null;
   return $arrayReturn;
 }
@@ -27,7 +25,6 @@ if(isset($_GET['action'])){
     //echo $urlData[ConfigApp::$ACTION];
     $action = $urlData[ConfigApp::$ACTION]; //home
 
-    $controller = new MateriasController();
     $partesURL = explode('/', $_GET['action']); //La utilizo para traer valor de id
 
     
@@ -39,6 +36,7 @@ if(isset($_GET['action'])){
         
         
         $metodo = $action[1];
+
        
         if(isset($params) &&  $params != null){
             $controller->$metodo($params);
@@ -48,4 +46,5 @@ if(isset($_GET['action'])){
         }
     }
 }
+
 ?>
