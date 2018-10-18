@@ -61,7 +61,8 @@ class MateriasController extends Controller
     $id_materia = $param[0];
 
     $Materia = $this->model->GetMateria($id_materia);
-    $this->view->MostrarEditarMateria("Editar Materia", $Materia);
+    $Modalidades = $this->model->GetModalidades();
+    $this->view->MostrarEditarMateria("Editar Materia", $Materia, $Modalidades);
   }
 
   function GuardarEditarMateria(){
@@ -72,9 +73,6 @@ class MateriasController extends Controller
     $descripcion = $_POST["descripcionForm"];
     $anio = $_POST["anioForm"];
     $division = $_POST["divisionForm"];
-
-
-
 
     $this->model->GuardarEditarMateria($titulo,$modalidad,$descripcion,$anio,$division,$id_materia);
 

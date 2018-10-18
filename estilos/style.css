@@ -1,0 +1,67 @@
+html, body, .container {
+  height: 100%;
+}
+/* Reset */
+html, body, h1, p, a, div, section {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+/* Basic */
+body {
+  font: 18px/23px "Calibri", sans-serif;
+  color: #d5cdf8;
+}
+
+h1 {
+  color: #728a14;
+  text-transform: uppercase;
+  font-size: 80px;
+  line-height: 50px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+a {
+  color: #ffffff;
+  cursor:pointer;
+}
+
+p {
+  margin: 0 0 15px 0;
+  color: #C93;
+}
+
+strong {
+  font-weight: 700;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+
+body {
+margin : 0;
+padding : 0;
+/*background : url(bck.jpg) top left no-repeat;*/
+	background-image: url(../img/bck.jpg);
+	/* Nos aseguramos que la imagen de fondo este centrada vertical y
+    horizontalmente en todo momento */
+	background-position: center center;
+	/* La imagen de fondo no se repite */
+	background-repeat: no-repeat;
+	/* La imagen de fondo está fija en el viewport, de modo que no se mueva cuando
+     la altura del contenido supere la altura de la imagen. */
+	background-attachment: fixed;
+	/* La imagen de fondo se reescala cuando se cambia el ancho de ventana
+     del navegador */
+	background-size: cover;
+	/* Fijamos un color de fondo para que se muestre mientras se está
+    cargando la imagen de fondo o si hay problemas para cargarla  */
+	background-color: #464646;
+}
+/* Fin Estilos para que en el fondo se vea la imagen ocupando toda la pantalla*/

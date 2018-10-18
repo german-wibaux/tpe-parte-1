@@ -15,12 +15,12 @@
         <div class="form-group">
           <label for="modalidadForm">Modalidad</label>
             <select class="form-control" id="modalidadForm" name="modalidadForm" value="{$Materia["idModalidad"]}" >
-              <option value="1">Modalidad 1</option>
-              <option value="2">Modalidad 2</option>
-              <option value="3">Modalidad 3</option>
-              {* {foreach from=$Modalidades item=modalidad}
-                <option value="{$Modalidadades['idModalidad']}">{$Modalidadades['nombreModalidad']}</option>
-              {/foreach} *}
+              {* <option value="1">Modalidad 1</option>
+                <option value="2">Modalidad 2</option>
+                <option value="3">Modalidad 3</option> *}
+              {foreach from=$Modalidades item=modalidad}
+                <option value="{$modalidad['idModalidad']}">{$modalidad['nombreModalidad']}</option>
+              {/foreach}
 
           </select>
 <!--          <input type="text" class="form-control" id="descripcionForm" name="descripcionForm"> -->
@@ -48,7 +48,7 @@
               <option value="3">Tercera</option>
           </select>
         </div>
-             
+
         <button type="submit" class="btn btn-primary">Editar Materia</button>
       </form>
     </div>

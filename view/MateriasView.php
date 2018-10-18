@@ -33,12 +33,14 @@ class MateriasView
     $this->Smarty->assign('Modalidades',$Modalidades);
     $this->Smarty->assign('username',$this->username);
     $this->Smarty->display('templates/home.tpl');
+
   }
 
-  function MostrarEditarMateria($Titulo, $Materia){
+  function MostrarEditarMateria($Titulo, $Materia, $Modalidades){
 
     $this->Smarty->assign('Editar materia',$Titulo);
     $this->Smarty->assign('Materia',$Materia);
+    $this->Smarty->assign('Modalidades',$Modalidades);
     $this->Smarty->assign('home',"http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 
     $this->Smarty->display('templates/MostrarEditarMateria.tpl');

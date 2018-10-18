@@ -15,6 +15,8 @@ class ConfigApp
       'borrarModalidad'=> 'MateriasController#BorrarModalidad',
       // 'completada'=> 'TareasController#CompletarTarea',
       // 'editar'=> 'TareasController#EditarTarea',
+      'editar'=> 'MateriasController#EditarMateria',
+      'guardarEditar'=> 'MateriasController#GuardarEditarMateria',
       'editarModalidad'=> 'MateriasController#EditarModalidad',
       'GuardarEditarModalidad'=> 'MateriasController#GuardarEditarModalidad',
       // 'mostrarUsuarios'=> 'UsuarioController#MostrarUsuario',
