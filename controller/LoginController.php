@@ -26,10 +26,10 @@ class LoginController extends Controller
 
   }
 
-  // function Home(){
+  function Home(){
     
-  //   $this->view->Home($this->Titulo);     
-  // }
+    $this->view->Home($this->Titulo);     
+  }
 
   function logout(){
     session_start();

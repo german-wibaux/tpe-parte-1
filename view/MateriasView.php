@@ -9,11 +9,13 @@ require('libs/Smarty.class.php');
 class MateriasView
 {
   private $Smarty;
+  private $username;
 
   function __construct()
   {
     
     $this->Smarty = new Smarty();
+    $this->username = $_SESSION['User'];
   }
 
   function MostrarMaterias($Titulo, $Materias, $Modalidades){
@@ -26,20 +28,34 @@ class MateriasView
     $this->Smarty->display('templates/materias.tpl');
   }
 
-  function Home($Titulo){
+  function Home($Titulo, $Modalidades){
 
     $this->Smarty->assign('Home',$Titulo);
+    $this->Smarty->assign('Modalidades',$Modalidades);
+    $this->Smarty->assign('username',$this->username);
     $this->Smarty->display('templates/home.tpl');
+
   }
 
-  function MostrarEditarMateria($Titulo, $Materia){
+  function MostrarEditarMateria($Titulo, $Materia, $Modalidades){
 
-    $this->Smarty->assign('Editar materia',$Titulo); 
+    $this->Smarty->assign('Editar materia',$Titulo);
     $this->Smarty->assign('Materia',$Materia);
-    $this->Smarty->assign('home',"//".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    $this->Smarty->assign('Modalidades',$Modalidades);
+    $this->Smarty->assign('home',"http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 
     $this->Smarty->display('templates/MostrarEditarMateria.tpl');
   }
+
+  function MostrarEditarModalidad($Titulo, $Modalidad){
+
+    $this->Smarty->assign('Editar modalidad',$Titulo);
+    $this->Smarty->assign('Modalidad',$Modalidad);
+    $this->Smarty->assign('home',"http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+
+    $this->Smarty->display('templates/MostrarEditarModalidad.tpl');
+  }
+
 }
 
  ?>

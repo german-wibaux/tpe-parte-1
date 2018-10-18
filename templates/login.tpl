@@ -1,5 +1,6 @@
 {include file="header.tpl"}
     <div class="container">
+      <div class="caja">
       <h1>{$Titulo}</h1>
     <form method="post" action="verificarLogin">
       <div class="form-group">
@@ -17,7 +18,8 @@
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
     </div>
+  </div>
     </div>
-    
+
 
 {include file="footer.tpl"}
