@@ -5,9 +5,10 @@ class ConfigApp
     public static $ACTION = 'action';
     public static $PARAMS = 'params';
     public static $ACTIONS = [
-      ''=> 'MateriasController#Home',
+      ''=> 'VisitanteController#Home',
       'home'=> 'MateriasController#Home',
-      'materias' => 'MateriasController#Materias',
+      'materias' => 'VisitanteController#HomeMaterias',
+      'administracion' => 'MateriasController#Materias',
       'crear' => 'MateriasController#Modalidades',
       'agregar'=> 'MateriasController#InsertMateria',
       'agregarModalidad'=> 'MateriasController#InsertModalidad',
