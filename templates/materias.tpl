@@ -1,6 +1,7 @@
 {include file="header.tpl"}
 
   <div class="container">
+    <div class="caja">
 
     <div class="container">
 
@@ -59,7 +60,24 @@
       <ul class="list-group">
             {foreach from=$Materias item=materia}
               {* {if $materia['anio'] == 1 && $materia['division'] == 1} *}
-                <li class="list-group-item">{$materia['nombreMateria']} ----- {$materia['descripcionMateria']}<a href="editar/{$materia['idMateria']}">EDITAR</a><a href="borrar/{$materia['idMateria']}">BORRAR</a></li>
+                {* <li class="list-group-item">{$materia['nombreMateria']} ----- {$materia['descripcionMateria']}<a href="editar/{$materia['idMateria']}">EDITAR</a><a href="borrar/{$materia['idMateria']}">BORRAR</a></li> *}
+              <div class="caja">
+                <div class="row">
+                  <div class="col-6" >
+
+                    <p>{$materia['nombreMateria']}</p>
+                    <p>{$materia['descripcionMateria']}</p>
+                    <p>Año: {$materia['anio']}°
+                    Division: {$materia['division']}°</p>
+
+                  </div>
+                  <div class="col-6" >
+
+                    <div class="botonEditar"><a href="editar/{$materia['idMateria']}">EDITAR</a></div>
+                    <div class="botonBorrar"><a href="borrar/{$materia['idMateria']}">BORRAR</a></div>
+                  </div>
+                </div>
+              </div>
               {* {/if} *}
             {/foreach}
       </ul>
@@ -81,17 +99,33 @@
     <button type="submit" class="btn btn-primary">Crear Modalidad</button>
   </form>
 
-<h1>{$Titulo}</h1>
+<h1>Lista de Modalidades</h1>
 
 <div class="container">
   <ul class="list-group">
         {foreach from=$Modalidades item=modalidad}
           {* {if $materia['anio'] == 1 && $materia['division'] == 1} *}
-            <li class="list-group-item">{$modalidad['nombreModalidad']} ----- <a href="editarModalidad/{$modalidad['idModalidad']}">EDITAR</a><a href="borrarModalidad/{$modalidad['idModalidad']}">BORRAR</a></li>
+          {*   <li class="list-group-item">{$modalidad['nombreModalidad']} ----- <a href="editarModalidad/{$modalidad['idModalidad']}">EDITAR</a><a href="borrarModalidad/{$modalidad['idModalidad']}">BORRAR</a></li> *}
+
+            <div class="caja">
+              <div class="row">
+                <div class="col-6" >
+
+                  <p>{$modalidad['nombreModalidad']}</p>
+
+                </div>
+                <div class="col-6" >
+
+                  <div class="botonEditar"><a href="editarModalidad/{$modalidad['idModalidad']}">EDITAR</a></div>
+                  <div class="botonBorrar"><a href="borrarModalidad/{$modalidad['idModalidad']}">BORRAR</a></div>
+                </div>
+              </div>
+            </div>
           {* {/if} *}
         {/foreach}
   </ul>
 
+</div>
 </div>
 </div>
 

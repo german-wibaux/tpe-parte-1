@@ -33,13 +33,13 @@ class MateriasController extends Controller
       $Modalidades = $this->model->GetModalidades();
       $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades);
   }
-  /*
+
   function Modalidades(){
     $Modalidades = $this->model->GetModalidades();
     $this->view->Mostrar($this->Titulo, $Modalidades);
 
   }
-*/
+
   function InsertMateria(){
     $nombre = $_POST["nombreForm"];
     $modalidad = $_POST["modalidadForm"];
