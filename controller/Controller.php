@@ -1,9 +1,9 @@
 <?php 
 
-define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
-define('HOMEMATERIAS', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/home-materias');
-define('LOGIN', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/login');
-define('LOGOUT', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/logout');
+define('HOME', '//'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
+define('HOMEMATERIAS', '//'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/home-materias');
+define('LOGIN', '//'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/login');
+define('LOGOUT', '//'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/logout');
 
 class Controller {
 

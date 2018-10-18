@@ -9,15 +9,11 @@ require('libs/Smarty.class.php');
 class MateriasView
 {
   private $Smarty;
-  private $username;
 
   function __construct()
   {
     
     $this->Smarty = new Smarty();
-    $this->username = $_SESSION['User'];
-    // echo 'user';
-    // echo  $this->username;
   }
 
   function MostrarMaterias($Titulo, $Materias, $Modalidades){
@@ -25,7 +21,6 @@ class MateriasView
     $this->Smarty->assign('Titulo',$Titulo); 
     $this->Smarty->assign('Materias',$Materias);
     $this->Smarty->assign('Modalidades',$Modalidades);
-    $this->Smarty->assign('username',$this->username);
     
     //$smarty->debugging = true;
     $this->Smarty->display('templates/materias.tpl');
@@ -34,7 +29,6 @@ class MateriasView
   function Home($Titulo){
 
     $this->Smarty->assign('Home',$Titulo);
-    $this->Smarty->assign('username',$this->username);
     $this->Smarty->display('templates/home.tpl');
   }
 
@@ -42,7 +36,7 @@ class MateriasView
 
     $this->Smarty->assign('Editar materia',$Titulo); 
     $this->Smarty->assign('Materia',$Materia);
-    $this->Smarty->assign('home',"http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    $this->Smarty->assign('home',"//".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
 
     $this->Smarty->display('templates/MostrarEditarMateria.tpl');
   }
