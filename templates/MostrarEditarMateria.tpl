@@ -15,16 +15,17 @@
 
           <div class="form-group">
             <label for="modalidadForm">Modalidad</label>
-              <select class="form-control" id="{$modalidad['idModalidad']}" name="modalidadForm" value="{$Materia["idModalidad"]}" >
-                {* <option value="1">Modalidad 1</option>
-                  <option value="2">Modalidad 2</option>
-                  <option value="3">Modalidad 3</option> *}
+              <select class="form-control" id="modalidadForm" name="modalidadForm">
                 {foreach from=$Modalidades item=modalidad}
+
+                 {if  $modalidad['idModalidad'] == {$Materia['idModalidad']} }
+                   <option  selected disabled hidden>{$modalidad['nombreModalidad']}</option> 
+                 {/if}
+
                   <option value="{$modalidad['idModalidad']}">{$modalidad['nombreModalidad']}</option>
                 {/foreach}
 
             </select>
-  <!--          <input type="text" class="form-control" id="descripcionForm" name="descripcionForm"> -->
           </div>
 
           <div class="form-group">
@@ -34,7 +35,8 @@
 
           <div class="form-group">
             <label for="anioForm">Año</label>
-              <select class="form-control" id="anioForm" name="anioForm" value="{$Materia["anio"]}" >
+              <select class="form-control" id="anioForm" name="anioForm"  >
+                <option  selected disabled hidden>{$Materia["anio"]}</option> 
                 <option value="1">Primer Año</option>
                 <option value="2">Segundo Año</option>
                 <option value="3">Tercer Año</option>
