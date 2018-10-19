@@ -1,9 +1,7 @@
 {include file="header.tpl"}
 
 
-    <div class="container">
-
-
+<div class="container">
 
 
     <h1>{$Titulo}</h1>
