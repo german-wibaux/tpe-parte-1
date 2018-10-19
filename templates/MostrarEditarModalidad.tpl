@@ -2,10 +2,9 @@
 
     <h1>{$Titulo}</h1>
 
-
     <div class="container">
       <div class="caja">
-        <h2>Formulario</h2>
+        <h2>Edicion de Modalidad</h2>
         <form method="post" action="{$home}/GuardarEditarModalidad">
           <input type="hidden" class="form-control" id="idForm" name="idForm" value="{$Modalidad["idModalidad"]}">
           <div class="form-group">

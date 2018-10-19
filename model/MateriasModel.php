@@ -9,6 +9,7 @@ class MateriasModel
   function __construct()
   {
     $this->db = $this->Connect();
+
   }
 
   function Connect(){
@@ -19,13 +20,16 @@ class MateriasModel
 
   function GetMaterias(){
 
-      $sentencia = $this->db->prepare( "select * from materias");
+//      $sentencia = $this->db->prepare( "select * from materias");
+      $sentencia = $this->db->prepare( "select a.* from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad");
+
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function GetModalidades(){
 
+      $sentencia = $this->db->prepare( "select * from modalidad");
       $sentencia = $this->db->prepare( "select * from modalidad");
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);

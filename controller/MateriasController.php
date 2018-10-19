@@ -39,7 +39,7 @@ class MateriasController extends SecuredController
     $this->view->Mostrar($this->Titulo, $Modalidades);
 
   }
-  
+
 
   function InsertMateria(){
     $nombre = $_POST["nombreForm"];
@@ -47,7 +47,7 @@ class MateriasController extends SecuredController
     $descripcion = $_POST["descripcionForm"];
     $anio = $_POST["anioForm"];
     $division = $_POST["divisionForm"];
-    
+
     $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
 
     header('Location: '.HOME);
