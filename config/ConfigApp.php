@@ -14,13 +14,10 @@ class ConfigApp
       'agregarModalidad'=> 'MateriasController#InsertModalidad',
       'borrar'=> 'MateriasController#BorrarMateria',
       'borrarModalidad'=> 'MateriasController#BorrarModalidad',
-      // 'completada'=> 'TareasController#CompletarTarea',
-      // 'editar'=> 'TareasController#EditarTarea',
       'editar'=> 'MateriasController#EditarMateria',
       'guardarEditar'=> 'MateriasController#GuardarEditarMateria',
       'editarModalidad'=> 'MateriasController#EditarModalidad',
       'GuardarEditarModalidad'=> 'MateriasController#GuardarEditarModalidad',
-      // 'mostrarUsuarios'=> 'UsuarioController#MostrarUsuario',
       'login'=> 'LoginController#login',
       'logout'=> 'LoginController#logout',
       'verificarLogin' => 'LoginController#verificarLogin'

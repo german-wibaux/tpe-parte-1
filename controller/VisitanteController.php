@@ -1,8 +1,8 @@
 <?php
 
 
-require_once  "./view/VisitanteView.php";
-require_once  "./model/UsuarioModel.php";
+require_once "./view/VisitanteView.php";
+require_once "./model/UsuarioModel.php";
 include_once 'controller/Controller.php';
 
 
@@ -20,16 +20,17 @@ class VisitanteController extends Controller
     $this->Titulo = "Visitante";
   }
 
-  function HomeMaterias(){
-    $Materias = $this->model->GetMaterias();    
-    $this->view->mostrarMaterias($this->Titulo, $Materias);     
+  function HomeMaterias()
+  {
+    $Materias = $this->model->GetMaterias();
+    $this->view->mostrarMaterias($this->Titulo, $Materias);
   }
-  
-  function Home(){
-    //$Materias = $this->model->GetMaterias();    
-    $this->view->mostrarHome($this->Titulo);     
+
+  function Home()
+  {
+    $this->view->mostrarHome($this->Titulo);
   }
 
 }
 
- ?>
+?>
