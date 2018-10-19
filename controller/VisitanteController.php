@@ -28,7 +28,8 @@ class VisitanteController extends Controller
 
   function Home()
   {
-    $this->view->mostrarHome($this->Titulo);
+    $Modalidades = $this->model->GetModalidades();
+    $this->view->mostrarHome($this->Titulo, $Modalidades);
   }
 
 }

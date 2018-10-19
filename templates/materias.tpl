@@ -79,7 +79,7 @@
 
                     </div>
                 </div>
-                <!-- Alta de modalidades
+                <!-- Alta de modalidades -->
 
 
                 <div class="col-6">
