@@ -6,7 +6,7 @@
     <div class="container">
       <div class="caja">
         <h2>Editar Materias</h2>
-        <form method="post" action="{$home}/guardarEditar">
+        <form method="post" action="{HOME}/guardarEditar">
           <input type="hidden" class="form-control" id="idForm" name="idForm" value="{$Materia["idMateria"]}">
           <div class="form-group">
             <label for="tituloForm">Nombre materia</label>

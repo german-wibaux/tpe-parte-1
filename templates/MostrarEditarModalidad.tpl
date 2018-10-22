@@ -5,7 +5,7 @@
     <div class="container">
       <div class="caja">
         <h2>Edicion de Modalidad</h2>
-        <form method="post" action="{$home}/GuardarEditarModalidad">
+        <form method="post" action="{HOME}/GuardarEditarModalidad">
             <input type="hidden" class="form-control" id="idForm" name="idForm" value="{$Modalidad["idModalidad"]}">
             <div class="form-group">
                 <label for="tituloForm">Nombre modalidad</label>
