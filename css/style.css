@@ -109,6 +109,11 @@ p {
   color: #ffffff;
 }
 
+p.mod {
+  margin: 0 0 15px 0;
+  color: #00f5ff;
+}
+
 strong {
   font-weight: 700;
 }
