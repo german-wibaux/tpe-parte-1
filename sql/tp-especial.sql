@@ -249,3 +249,8 @@ VALUES
 (NULL, 'Historia y Geografia I', 3, 'Desc. Historia y Geografia I', 1, 6),
 (NULL, 'Educacion Civica', 3, 'Desc. Educacion Civica', 1, 6);
 COMMIT;
+ALTER TABLE `materias` ADD INDEX(`idModalidad`);
+ALTER TABLE `materias`
+  ADD CONSTRAINT `materias_ibfk_1` FOREIGN KEY (`idModalidad`) REFERENCES `modalidad` (`idModalidad`) ON DELETE SET NULL;
+
+COMMIT;
