@@ -13,13 +13,19 @@
               {$vModalidad = ''}
               {$vAnio = ''}
               {$vDivision = ''}
+              <div class="caja">
 
               {foreach from=$Materias item=materia}
                 {* {if $materia['anio'] == 1 && $materia['division'] == 1} *}
 
-                <div class="caja">
 
                   {if $materia['nombreModalidad'] != $vModalidad}
+                    {if $vModalidad != ''}
+                      </div>
+                      <div class="caja">
+
+                    {/if}
+
                       <p class="mod">{$materia['nombreModalidad']}</p>
                   {/if}
 
@@ -30,7 +36,6 @@
 
                   <p>{$materia['nombreMateria']}</p>
                   <p>{$materia['descripcionMateria']}</p>
-                </div>
 
                 {* {/if} *}
                 {$vModalidad = $materia['nombreModalidad']}
@@ -38,6 +43,7 @@
                 {$vDivision = $materia['division']}
 
               {/foreach}
+            </div>
 
         </ul>
 
