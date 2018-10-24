@@ -2,6 +2,7 @@
 
 require_once "./view/MateriasView.php";
 require_once "./model/MateriasModel.php";
+require_once "./model/ModalidadModel.php";
 include_once 'controller/Controller.php';
 require_once "controller/SecuredController.php";
 
@@ -17,6 +18,7 @@ class MateriasController extends SecuredController
 
     $this->view = new MateriasView();
     $this->model = new MateriasModel();
+    $this->modelModalidades = new ModalidadModel();
     $this->Titulo = "Lista de Materias";
   }
 
@@ -24,7 +26,7 @@ class MateriasController extends SecuredController
   {
 
     $Materias = $this->model->GetMaterias();
-    $Modalidades = $this->model->GetModalidades();
+    $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->Home($this->Titulo, $Modalidades);
 
   }
@@ -32,13 +34,13 @@ class MateriasController extends SecuredController
   function Materias()
   {
     $Materias = $this->model->GetMaterias();
-    $Modalidades = $this->model->GetModalidades();
+    $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades);
   }
 
   function Modalidades()
   {
-    $Modalidades = $this->model->GetModalidades();
+    $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->Mostrar($this->Titulo, $Modalidades);
 
   }
@@ -70,7 +72,7 @@ class MateriasController extends SecuredController
     $id_materia = $param[0];
 
     $Materia = $this->model->GetMateria($id_materia);
-    $Modalidades = $this->model->GetModalidades();
+    $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->MostrarEditarMateria("Editar Materia", $Materia, $Modalidades);
   }
 
@@ -92,13 +94,13 @@ class MateriasController extends SecuredController
   function InsertModalidad()
   {
     $nombre = $_POST["nombreModalidadForm"];
-    $this->model->InsertarModalidad($nombre);
+    $this->modelModalidades->InsertarModalidad($nombre);
     header('Location: ' . HOME);
   }
 
   function BorrarModalidad($param)
   {
-    $this->model->BorrarModalidad($param[0]);
+    $this->modelModalidades->BorrarModalidad($param[0]);
     header("Location: //" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 
@@ -106,7 +108,7 @@ class MateriasController extends SecuredController
   {
     $id_modalidad = $param[0];
 
-    $Modalidad = $this->model->GetModalidad($id_modalidad);
+    $Modalidad = $this->modelModalidades->GetModalidad($id_modalidad);
     $this->view->MostrarEditarModalidad("Editar Modalidad", $Modalidad);
   }
 
@@ -116,7 +118,7 @@ class MateriasController extends SecuredController
 
     $modalidad = $_POST["tituloForm"];
 
-    $this->model->GuardarEditarModalidad($modalidad, $id_modalidad);
+    $this->modelModalidades->GuardarEditarModalidad($modalidad, $id_modalidad);
 
     header("Location: " . HOME);
   }

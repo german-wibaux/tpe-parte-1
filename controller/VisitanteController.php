@@ -17,6 +17,7 @@ class VisitanteController extends Controller
     parent::__construct();
     $this->view = new VisitanteView();
     $this->model = new MateriasModel();
+    $this->modelModalidades = new  ModalidadModel();
     $this->Titulo = "Visitante";
   }
 
@@ -28,7 +29,7 @@ class VisitanteController extends Controller
 
   function Home()
   {
-    $Modalidades = $this->model->GetModalidades();
+    $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->mostrarHome($this->Titulo, $Modalidades);
   }
 

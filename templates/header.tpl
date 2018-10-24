@@ -27,7 +27,7 @@
                     <a class="nav-link" href="{HOME}">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{HOMEMATERIAS}">Materias</a>
+                    <a class="nav-link" href="{HOMEMATERIAS}">Bachilleratos</a>
                 </li>
 
                 <li class="nav-item">
