@@ -22,7 +22,7 @@ class MateriasModel
   function GetMaterias(){
 
 //      $sentencia = $this->db->prepare( "select * from materias");
-      $sentencia = $this->db->prepare( "select a.*, o.nombreModalidad from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad");
+      $sentencia = $this->db->prepare( "select a.*, o.nombreModalidad from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad order by o.idModalidad, a.anio, a.division");
 
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);

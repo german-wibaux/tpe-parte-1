@@ -104,6 +104,12 @@ a {
   cursor:pointer;
 }
 
+a.accordion {
+  color: #ffffff;
+  cursor:pointer;
+}
+
+
 p {
   margin: 0 0 15px 0;
   color: #ffffff;

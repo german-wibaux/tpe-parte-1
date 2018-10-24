@@ -9,43 +9,54 @@
     <h1>{$Titulo}</h1>
 
     <div class="container">
-        <ul class="list-group">
               {$vModalidad = ''}
               {$vAnio = ''}
               {$vDivision = ''}
               <div class="caja">
 
-              {foreach from=$Materias item=materia}
-                {* {if $materia['anio'] == 1 && $materia['division'] == 1} *}
+                <div class="panel-group" id="accordion">
+                  {$vModalidad = ''}
+                  {$vAnio = ''}
+                  {$vDivision = ''}
 
+                  {foreach from=$Materias item=materia}
 
-                  {if $materia['nombreModalidad'] != $vModalidad}
-                    {if $vModalidad != ''}
-                      </div>
-                      <div class="caja">
-
+                    {if $materia['nombreModalidad'] != $vModalidad}
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a class="accordion" data-toggle="collapse" data-parent="#accordion" href="#accMod{$materia['idModalidad']}">{$materia['nombreModalidad']}</a>
+                          </h4>
+                        </div>
                     {/if}
 
-                      <p class="mod">{$materia['nombreModalidad']}</p>
-                  {/if}
+                        <div id="accMod{$materia['idModalidad']}" class="panel-collapse collapse in">
 
-                  {if $materia['anio'] != $vAnio || $materia['division'] != $vDivision}
-                      <p class="mod">Año: {$materia['anio']}°
-                      Division: {$materia['division']}°</p>
-                  {/if}
+                          <div class="panel-body">
+                            {if $materia['anio'] != $vAnio || $materia['division'] != $vDivision}
+                                <p class="mod">Año: {$materia['anio']}°
+                                Division: {$materia['division']}°</p>
+                            {/if}
 
-                  <p>{$materia['nombreMateria']}</p>
-                  <p>{$materia['descripcionMateria']}</p>
+                            <p>{$materia['nombreMateria']}</p>
 
-                {* {/if} *}
-                {$vModalidad = $materia['nombreModalidad']}
-                {$vAnio = $materia['anio']}
-                {$vDivision = $materia['division']}
+                          </div>
+                        </div>
+                    {if $materia['nombreModalidad'] != $vModalidad}
 
-              {/foreach}
+                      </div>
+                    {/if}
+
+                    {$vModalidad = $materia['nombreModalidad']}
+                    {$vAnio = $materia['anio']}
+                    {$vDivision = $materia['division']}
+
+                  {/foreach}
+                </div>
             </div>
 
-        </ul>
+
+
 
 
 </div>
