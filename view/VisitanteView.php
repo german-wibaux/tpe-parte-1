@@ -21,9 +21,10 @@ class VisitanteView
     $this->Smarty->display('templates/materiasVisitante.tpl');
   }
 
-  function mostrarHome($message = ''){
+  function mostrarHome($message = '', $Modalidades){
 
     $this->Smarty->assign('Titulo',"Bienvenidos");
+    $this->Smarty->assign('Modalidades',$Modalidades);
     $this->Smarty->assign('Message',$message);
     $this->Smarty->assign("basehref", $this->basehref);
     $this->Smarty->display('templates/home.tpl');

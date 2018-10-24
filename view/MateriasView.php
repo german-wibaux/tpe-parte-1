@@ -35,8 +35,8 @@ class MateriasView
   function Home($Titulo, $Modalidades){
 
     $this->Smarty->assign('Home',$Titulo);
-    $this->Smarty->assign("basehref", $this->basehref);
     $this->Smarty->assign('Modalidades',$Modalidades);
+    $this->Smarty->assign("basehref", $this->basehref);
     $this->Smarty->display('templates/home.tpl');
 
   }
@@ -63,6 +63,15 @@ class MateriasView
     $this->Smarty->assign("basehref", $this->basehref);
 
     $this->Smarty->display('templates/MostrarEditarModalidad.tpl');
+  }
+
+  function MostrarModalidad($Titulo, $ModalidadxMateria){
+
+    $this->Smarty->assign('Ver modalidad',$Titulo);
+    $this->Smarty->assign('Modalidad',$ModalidadxMateria);
+    $this->Smarty->assign("basehref", $this->basehref);
+
+    $this->Smarty->display('templates/MostrarModalidad.tpl');
   }
 
 }

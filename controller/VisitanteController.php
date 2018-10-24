@@ -3,6 +3,7 @@
 
 require_once "./view/VisitanteView.php";
 require_once "./model/UsuarioModel.php";
+require_once "./model/ModalidadModel.php";
 include_once 'controller/Controller.php';
 
 
@@ -29,6 +30,7 @@ class VisitanteController extends Controller
 
   function Home()
   {
+    
     $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->mostrarHome($this->Titulo, $Modalidades);
   }

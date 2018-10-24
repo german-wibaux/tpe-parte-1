@@ -37,14 +37,14 @@ class MateriasController extends SecuredController
     $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades);
   }
-
+/*
   function Modalidades()
   {
     $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->Mostrar($this->Titulo, $Modalidades);
 
   }
-
+*/
 
   function InsertMateria()
   {
@@ -122,6 +122,15 @@ class MateriasController extends SecuredController
 
     header("Location: " . HOME);
   }
+
+  function VerModalidad($param)
+  {
+    $id_modalidad = $param[0];
+
+    $ModalidadxMateria = $this->modelModalidades->GetMateriaPorModalidad($id_modalidad);
+    $this->view->MostrarModalidad("Mostrar Modalidad", $ModalidadxMateria);
+  }
+
 
 
 }
