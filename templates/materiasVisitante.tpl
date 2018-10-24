@@ -21,9 +21,12 @@
                     {if $materia['nombreModalidad'] != $vModalidad}
                       <div class="panel panel-default">
                         <div class="panel-heading">
-                          <h4 class="panel-title">
-                            <a class="accordion" data-toggle="collapse" data-parent="#accordion" href="#accMod{$materia['idModalidad']}">{$materia['nombreModalidad']}</a>
-                          </h4>
+                          <div class="card">
+
+                            <h4 class="panel-title">
+                              <a class="accordion" data-toggle="collapse" data-parent="#accordion" href="#accMod{$materia['idModalidad']}">{$materia['nombreModalidad']}</a>
+                            </h4>
+                          </div>
                         </div>
                     {/if}
 
