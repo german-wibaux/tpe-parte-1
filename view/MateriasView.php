@@ -68,7 +68,7 @@ class MateriasView
   function MostrarModalidad($Titulo, $ModalidadxMateria){
 
     $this->Smarty->assign('Ver modalidad',$Titulo);
-    $this->Smarty->assign('Modalidad',$ModalidadxMateria);
+    $this->Smarty->assign('$ModalidadxMateria',$ModalidadxMateria);
     $this->Smarty->assign("basehref", $this->basehref);
 
     $this->Smarty->display('templates/MostrarModalidad.tpl');

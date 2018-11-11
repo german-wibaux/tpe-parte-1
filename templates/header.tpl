@@ -41,7 +41,6 @@
 
                 <li class="nav-item">
                     <a class="nav-link disabled" href="{LOGOUT}">Logout </a>
-
                 </li>
 
 

@@ -225,15 +225,16 @@ INSERT INTO `modalidad` (`idModalidad`, `nombreModalidad`) VALUES
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `pass` varchar(255) NOT NULL
+  `pass` varchar(255) NOT NULL,
+  `rol` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nombre`, `pass`) VALUES
-(15, 'german', '$2y$10$avQXsLiQlEzKBMcrwNeTLumCv1iQytM6/EzvZds2xFvhCAdMU.uxu');
+INSERT INTO `usuario` (`id`, `nombre`, `pass`, `rol`) VALUES
+(15, 'german', '$2y$10$avQXsLiQlEzKBMcrwNeTLumCv1iQytM6/EzvZds2xFvhCAdMU.uxu', 'admin');
 
 --
 -- Índices para tablas volcadas

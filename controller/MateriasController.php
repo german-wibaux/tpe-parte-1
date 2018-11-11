@@ -54,7 +54,7 @@ class MateriasController extends SecuredController
     $anio = $_POST["anioForm"];
     $division = $_POST["divisionForm"];
 
-    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
+//    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
 
     $this->model->InsertarMateria($nombre, $modalidad, $descripcion, $anio, $division);
 
