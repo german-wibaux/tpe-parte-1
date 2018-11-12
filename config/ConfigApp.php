@@ -17,7 +17,7 @@ class ConfigApp
       'editar'=> 'MateriasController#EditarMateria',
       'guardarEditar'=> 'MateriasController#GuardarEditarMateria',
       'editarModalidad'=> 'MateriasController#EditarModalidad',
-      'MostrarModalidad'=> 'MateriasController#VerModalidad',
+      'MostrarModalidad'=> 'VisitanteController#VerModalidad',
       'GuardarEditarModalidad'=> 'MateriasController#GuardarEditarModalidad',
       'login'=> 'LoginController#login',
       'logout'=> 'LoginController#logout',

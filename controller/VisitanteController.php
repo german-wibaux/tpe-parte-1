@@ -30,9 +30,17 @@ class VisitanteController extends Controller
 
   function Home()
   {
-    
+
     $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->mostrarHome($this->Titulo, $Modalidades);
+  }
+
+  function VerModalidad($param)
+  {
+    $id_modalidad = $param[0];
+
+    $ModalidadxMateria = $this->modelModalidades->GetMateriaPorModalidad($id_modalidad);
+    $this->view->MostrarModalidad("Mostrar Modalidad", $ModalidadxMateria);
   }
 
 }
