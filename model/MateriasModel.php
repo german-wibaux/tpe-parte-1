@@ -16,7 +16,7 @@ class MateriasModel
   function Connect(){
     return new PDO('mysql:host=localhost;'
     .'dbname=tp-especial;charset=utf8'
-    , 'root', 'toor');
+    , 'root', '');
   }
 
   function GetMaterias(){

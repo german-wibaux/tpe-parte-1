@@ -229,6 +229,12 @@ CREATE TABLE `usuario` (
   `rol` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `comentarios` (
+  `id` int(11) NOT NULL,
+  `comentario` varchar(255) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `idMateria` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Volcado de datos para la tabla `usuario`
 --
@@ -259,6 +265,12 @@ ALTER TABLE `modalidad`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
+  ALTER TABLE `comentarios`
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `idUsuario` (`idUsuario`),
+    ADD KEY `idMateria` (`idMateria`);
+
+
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
@@ -288,9 +300,22 @@ ALTER TABLE `usuario`
 --
 -- Filtros para la tabla `materias`
 --
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_ibfk_1`
+FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id`),
+  ADD CONSTRAINT `comentarios_ibfk_2`
+FOREIGN KEY (`idMateria`) REFERENCES `materias` (`idMateria`);
+
+--
+-- Filtros para la tabla `materias`
+--
+
+
 ALTER TABLE `materias`
   ADD CONSTRAINT `materias_ibfk_1` FOREIGN KEY (`idModalidad`) REFERENCES `modalidad` (`idModalidad`) ON DELETE SET NULL;
 COMMIT;
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

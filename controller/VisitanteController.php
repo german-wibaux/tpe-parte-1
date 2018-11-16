@@ -40,6 +40,8 @@ class VisitanteController extends Controller
     $id_modalidad = $param[0];
 
     $ModalidadxMateria = $this->modelModalidades->GetMateriaPorModalidad($id_modalidad);
+//var_dump($ModalidadxMateria); die();
+
     $this->view->MostrarModalidad("Mostrar Modalidad", $ModalidadxMateria);
   }
 
