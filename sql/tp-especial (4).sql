@@ -232,9 +232,39 @@ CREATE TABLE `usuario` (
 CREATE TABLE `comentarios` (
   `id` int(11) NOT NULL,
   `comentario` varchar(255) NOT NULL,
+  `puntaje` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `idMateria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `imagenes` (
+  `id` int(11) NOT NULL,
+  `URL` varchar(255) NOT NULL,
+  `idMateria` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `imagenes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idMateria` (`idMateria`);
+  COMMIT;
+
+ALTER TABLE `imagenes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+COMMIT;
+
+INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
+('materias/1_001.jpg', 1);
+INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
+('materias/1_002.jpg', 1);
+INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
+('materias/2_001.jpg', 2);
+INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
+('materias/3_001.jpg', 3);
+INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
+('materias/3_002.jpg', 3);
+INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
+('materias/4_001.jpg', 4);
+
 --
 -- Volcado de datos para la tabla `usuario`
 --
@@ -252,6 +282,7 @@ INSERT INTO `usuario` (`id`, `nombre`, `pass`, `rol`) VALUES
 ALTER TABLE `materias`
   ADD PRIMARY KEY (`idMateria`),
   ADD KEY `idModalidad` (`idModalidad`);
+
 
 --
 -- Indices de la tabla `modalidad`
@@ -313,8 +344,12 @@ FOREIGN KEY (`idMateria`) REFERENCES `materias` (`idMateria`);
 
 ALTER TABLE `materias`
   ADD CONSTRAINT `materias_ibfk_1` FOREIGN KEY (`idModalidad`) REFERENCES `modalidad` (`idModalidad`) ON DELETE SET NULL;
-COMMIT;
+  COMMIT;
 
+
+ALTER TABLE `imagenes`
+  ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`idMateria`) REFERENCES `materias` (`idMateria`);
+COMMIT;
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
