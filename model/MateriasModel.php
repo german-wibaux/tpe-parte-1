@@ -27,6 +27,8 @@ class MateriasModel
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
+
+
 /*
   function GetModalidades(){
 
@@ -36,12 +38,29 @@ class MateriasModel
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 */
+
   function GetMateria($idMateria){
 
       $sentencia = $this->db->prepare( "select * from materias where idMateria=?");
       $sentencia->execute(array($idMateria));
       return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
+
+  function GetComentarios(){
+
+  //      $sentencia = $this->db->prepare( "select * from materias");
+      $sentencia = $this->db->prepare( "select * from comentarios");
+      $sentencia->execute();
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function GetComentario($idMateria){
+
+      $sentencia = $this->db->prepare( "select * from comentarios where idMateria=?");
+      $sentencia->execute(array($idMateria));
+      return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
+
 /*
   function GetModalidad($idModalidad){
 

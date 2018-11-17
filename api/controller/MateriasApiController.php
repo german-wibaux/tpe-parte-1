@@ -11,15 +11,17 @@ class MateriasApiController extends Api{
     $this->model = new MateriasModel();
   }
 
-  function GetMaterias($param = null){
+  function GetComentarios($param = null){
 
     if(isset($param)){
         $id_materia = $param[0];
-        $arreglo = $this->model->GetMateria($id_materia);
+        $arreglo = $this->model->GetComentario($id_materia);
         $data = $arreglo;
-        
+
     }else{
-      $data = $this->model->GetMaterias();
+      $data = $this->model->GetComentarios();
+      //var_dump($data); die();
+
     }
       if(isset($data)){
         return $this->json_response($data, 200);

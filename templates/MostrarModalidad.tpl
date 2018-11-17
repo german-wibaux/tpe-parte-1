@@ -6,28 +6,34 @@
     <h1>{$Titulo}</h1>
 
     <div class="container">
-              {$vModalidad = ''}
-              {$vAnio = ''}
-              {$vDivision = ''}
               <div class="caja">
 
                 <div class="panel-group" id="accordion">
-                  {$vModalidad = ''}
                   {$vAnio = ''}
                   {$vDivision = ''}
 
                   {foreach from=$ModalidadxMateria item=materia}
 
-                    {if $materia['nombreModalidad'] != $vModalidad}
+                    {if $materia['anio'] != $vAnio}
+                      {if $materia['anio'] == 1}
+                        {$nAnio = 'Primer Año'}
+                      {/if}
+                      {if $materia['anio'] == 2}
+                        {$nAnio = 'Segundo Año'}
+                      {/if}
+                      {if $materia['anio'] == 3}
+                        {$nAnio = 'Tercer Año'}
+                      {/if}
+
                       <div class="panel panel-default">
                         <div class="panel-heading">
                           <h4 class="panel-title">
-                            <a class="accordion" data-toggle="collapse" data-parent="#accordion" href="#accMod{$materia['idModalidad']}">{$materia['nombreModalidad']}</a>
+                            <a class="accordion" data-toggle="collapse" data-parent="#accordion" href="#accMod{$materia['anio']}">{$nAnio}</a>
                           </h4>
                         </div>
                     {/if}
 
-                        <div id="accMod{$materia['idModalidad']}" class="panel-collapse collapse in">
+                        <div id="accMod{$materia['anio']}" class="panel-collapse collapse in">
 
                           <div class="panel-body">
                             {if $materia['anio'] != $vAnio || $materia['division'] != $vDivision}
@@ -39,7 +45,7 @@
 
                           </div>
                         </div>
-                    {if $materia['nombreModalidad'] != $vModalidad}
+                    {if $materia['anio'] != $vAnio}
 
                       </div>
                     {/if}
