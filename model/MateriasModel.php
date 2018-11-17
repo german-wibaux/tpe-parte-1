@@ -22,7 +22,8 @@ class MateriasModel
   function GetMaterias(){
 
 //      $sentencia = $this->db->prepare( "select * from materias");
-      $sentencia = $this->db->prepare( "select a.*, o.nombreModalidad from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad order by o.idModalidad, a.anio, a.division");
+//      $sentencia = $this->db->prepare( "select a.*, o.nombreModalidad from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad order by o.idModalidad, a.anio, a.division");
+      $sentencia = $this->db->prepare( "select a.*, o.nombreModalidad, CASE WHEN i.URL is NULL then 'materias/000.jpg' ELSE i.URL END as RUTA from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad LEFT JOIN imagenes i on a.idMateria=i.idMateria order by o.idModalidad, a.anio, a.division");
 
       $sentencia->execute();
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);

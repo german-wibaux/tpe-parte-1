@@ -255,13 +255,9 @@ COMMIT;
 INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
 ('materias/1_001.jpg', 1);
 INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
-('materias/1_002.jpg', 1);
-INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
 ('materias/2_001.jpg', 2);
 INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
 ('materias/3_001.jpg', 3);
-INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
-('materias/3_002.jpg', 3);
 INSERT INTO `imagenes` (`URL`, `idMateria`) VALUES
 ('materias/4_001.jpg', 4);
 

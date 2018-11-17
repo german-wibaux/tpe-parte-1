@@ -36,7 +36,9 @@ class ModalidadModel
 
   function GetMateriaPorModalidad($idModalidad){
 
+//      $sentencia = $this->db->prepare( "select a.*, o.nombreModalidad from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad where a.idModalidad=? order by o.idModalidad, a.anio, a.division");
       $sentencia = $this->db->prepare( "select a.*, o.nombreModalidad from materias a inner JOIN modalidad o on a.idModalidad = o.idModalidad where a.idModalidad=? order by o.idModalidad, a.anio, a.division");
+
       $sentencia->execute(array($idModalidad));
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }

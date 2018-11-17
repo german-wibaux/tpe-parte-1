@@ -134,6 +134,10 @@ img {
 	height: 100%;
 }
 
+img.mat {
+	width: 40px;
+	height: 40px;
+}
 
 .navbar {
   width: 100%;

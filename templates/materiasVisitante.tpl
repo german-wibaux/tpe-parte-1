@@ -38,7 +38,7 @@
                                 Division: {$materia['division']}°</p>
                             {/if}
 
-                            <p>{$materia['nombreMateria']}</p>
+                            <p><img class="mat" src="img/{$materia['RUTA']}">{$materia['nombreMateria']}</p>
 
                           </div>
                         </div>
