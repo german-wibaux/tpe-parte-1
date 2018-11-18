@@ -64,7 +64,31 @@ class LoginController extends Controller
 
   }
 
+  function registrarUsuario()
+  {
+    $user = $_POST["usuarioId"];
+    $pass = $_POST["passwordId"];
+    $dbUser = $this->model->getUser($user);
+    $this->view->mostrarRegistro("Carga de Nuevo Usuario");
 
+//    $user = $_POST["usuarioId"];
+//    $pass = $_POST["passwordId"];
+//    $dbUser = $this->model->getUser($user, $pass, 'guest');
+//    $this->view->mostrarRegistro("No existe el usuario");
+  }
+
+  function InsertUsuario()
+  {
+    $nombre = $_POST["usuarioId"];
+    $pass = $_POST["passwordId"];
+    $rol = "guest";
+
+//    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
+
+    $this->model->AltaUser($nombre, $pass, $rol);
+
+    header('Location: ' . HOME);
+  }
 
 }
 

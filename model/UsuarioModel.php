@@ -33,6 +33,14 @@ class UsuarioModel
         return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function AltaUser($user, $pass, $rol)
+    {
+        $sentencia = $this->db->prepare("INSERT INTO usuario(nombre, pass, rol) VALUES(?,?,?)");
+        $sentencia->execute(array($user, $pass, $rol));
+        //var_dump($sentencia); die();
+
+    }
+
 
 }
 

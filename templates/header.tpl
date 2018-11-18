@@ -43,6 +43,10 @@
                     <a class="nav-link disabled" href="{LOGOUT}">Logout </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{REGISTER}">Registro</a>
+                </li>
+
 
             </ul>
         </div>

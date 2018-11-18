@@ -21,7 +21,10 @@ class ConfigApp
       'GuardarEditarModalidad'=> 'MateriasController#GuardarEditarModalidad',
       'login'=> 'LoginController#login',
       'logout'=> 'LoginController#logout',
-      'verificarLogin' => 'LoginController#verificarLogin'
+      'verificarLogin' => 'LoginController#verificarLogin',
+      'register' => 'LoginController#registrarUsuario',
+      'agregarUsuario' => 'LoginController#InsertUsuario'
+
     ];
 
 }
