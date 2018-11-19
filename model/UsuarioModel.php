@@ -35,9 +35,9 @@ class UsuarioModel
 
     function AltaUser($user, $pass, $rol)
     {
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
         $sentencia = $this->db->prepare("INSERT INTO usuario(nombre, pass, rol) VALUES(?,?,?)");
-        $sentencia->execute(array($user, $pass, $rol));
-        //var_dump($sentencia); die();
+        $sentencia->execute(array($user, $hash, $rol));
 
     }
 

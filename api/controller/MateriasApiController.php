@@ -12,7 +12,6 @@ class MateriasApiController extends Api{
   }
 
   function GetComentarios($param = null){
-
     if(isset($param)){
         $id_materia = $param[0];
         $arreglo = $this->model->GetComentario($id_materia);

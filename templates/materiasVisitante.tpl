@@ -40,6 +40,11 @@
 
                             <p><img class="mat" src="img/{$materia['RUTA']}">{$materia['nombreMateria']}</p>
 
+                              <div id="comentarios-container" class="container">
+
+                              </div>
+
+
                           </div>
                         </div>
                     {if $materia['nombreModalidad'] != $vModalidad}

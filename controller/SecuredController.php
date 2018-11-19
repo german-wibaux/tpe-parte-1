@@ -10,7 +10,8 @@ class SecuredController extends Controller
         session_start();
 
         // verifica que este logueado
-        if (isset($_SESSION['User'])) { // si esta logueado
+        echo $_SESSION['Rol'];
+        if (isset($_SESSION['User']) && $_SESSION['Rol'] == "admin" ) { // si esta logueado
             if (time() - $_SESSION['LAST_ACTIVITY'] > 1800) { // expiro el timeout
                 header('Location: ' . LOGOUT);
                 die();

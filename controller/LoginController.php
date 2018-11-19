@@ -47,11 +47,14 @@ class LoginController extends Controller
     $pass = $_POST["passwordId"];
     $dbUser = $this->model->getUser($user);
 
-    if (isset($dbUser)) {
+
+      if (isset($dbUser)) {
       if (password_verify($pass, $dbUser[0]['pass'])) {
         session_start();
+        $_SESSION["Rol"] = $dbUser[0]['rol'];
         $_SESSION["User"] = $user;
         $_SESSION['LAST_ACTIVITY'] = time();
+        //print_r($_SESSION["Rol"]);
         header("Location: " . HOME);
         die();
       } else {
@@ -70,11 +73,6 @@ class LoginController extends Controller
     $pass = $_POST["passwordId"];
     $dbUser = $this->model->getUser($user);
     $this->view->mostrarRegistro("Carga de Nuevo Usuario");
-
-//    $user = $_POST["usuarioId"];
-//    $pass = $_POST["passwordId"];
-//    $dbUser = $this->model->getUser($user, $pass, 'guest');
-//    $this->view->mostrarRegistro("No existe el usuario");
   }
 
   function InsertUsuario()
@@ -82,8 +80,6 @@ class LoginController extends Controller
     $nombre = $_POST["usuarioId"];
     $pass = $_POST["passwordId"];
     $rol = "guest";
-
-//    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
 
     $this->model->AltaUser($nombre, $pass, $rol);
 
