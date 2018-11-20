@@ -23,7 +23,8 @@ class ConfigApp
       'logout'=> 'LoginController#logout',
       'verificarLogin' => 'LoginController#verificarLogin',
       'register' => 'LoginController#registrarUsuario',
-      'agregarUsuario' => 'LoginController#InsertUsuario'
+      'agregarUsuario' => 'LoginController#InsertUsuario',
+      'materia' => 'VisitanteController#VerComentarios'
 
     ];
 

@@ -8,7 +8,9 @@ class ConfigApi
       'comentario#GET'=> 'MateriasApiController#GetComentarios',
       'materia#DELETE'=> 'MateriasApiController#DeleteMateria',
       'materia#POST'=> 'MateriasApiController#InsertMateria',
-      'materia#PUT'=> 'MateriasApiController#UpdateMateria'
+      'materia#PUT'=> 'MateriasApiController#UpdateMateria',
+      'materia#GET'=> 'MateriasApiController#GetComentarios'
+
     ];
 
 }

@@ -38,11 +38,9 @@
                                 Division: {$materia['division']}°</p>
                             {/if}
 
-                            <p><img class="mat" src="img/{$materia['RUTA']}">{$materia['nombreMateria']}</p>
+                            <p><img class="mat" src="img/{$materia['RUTA']}"><a href="materia/{$materia['idMateria']}">{$materia['nombreMateria']}</a></p>
 
-                              <div id="comentarios-container" class="container">
-
-                              </div>
+<!--                              <div id="comentarios-container_{$materia['idMateria']}" class="container">-->
 
 
                           </div>
