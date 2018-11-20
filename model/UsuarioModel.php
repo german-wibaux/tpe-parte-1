@@ -16,7 +16,7 @@ class UsuarioModel
     {
         return new PDO('mysql:host=localhost;'
             . 'dbname=tp-especial;charset=utf8'
-            , 'root', '');
+            , 'root', 'toor');
     }
 
     function GetUsuario()
