@@ -19,7 +19,7 @@ function mostrarComentarios(jsonTareas) {
         otra: "Comentarios"
     }
     let html = templateMateriasVisitante(context);
-    document.querySelector("#comentarios-container").innerHTML = html;
+    //document.querySelector("#comentarios-container").innerHTML = html;
 
     let loc = window.location;
     let idM = (loc.pathname.substr((loc.pathname.lastIndexOf('/') + 1)-loc.pathname.length));
