@@ -7,8 +7,9 @@
 
   <div class="container">
     <div class="caja">
-      <div id="contenido" class="container">
+      <div id="contenido" class="container">    </div>
       <div id="comentarios-container" class="container">
+
     </div>
 
     </div>
