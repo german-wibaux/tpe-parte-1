@@ -29,6 +29,20 @@ class MateriasApiController extends Api{
       }
   }
 
+    function GetMateria($param = null){
+        if(isset($param)){
+            $id_materia = $param[0];
+            $arreglo = $this->model->GetMateria($id_materia);
+            $data = $arreglo;
+
+        }
+        if(isset($data)){
+            return $this->json_response($data, 200);
+        }else{
+            return $this->json_response(null, 404);
+        }
+    }
+
   function DeleteMateria($param = null){
     if(count($param) == 1){
         $id_materia = $param[0];
