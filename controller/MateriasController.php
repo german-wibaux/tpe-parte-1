@@ -58,8 +58,18 @@ class MateriasController extends SecuredController
     $division = $_POST["divisionForm"];
 
 //    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
-    $rutaTempImagenes = $_FILES['imagenes']['tmp_name'];
-    $this->model->InsertarMateria($nombre, $modalidad, $descripcion, $anio, $division, $rutaTempImagenes[0]);
+    if(!(empty($_FILES['imagenes'][0]))){
+        $this->model->InsertarMateria($nombre, $modalidad, $descripcion, $anio, $division);
+        //printf($_FILES);
+    } else {
+        $rutaTempImagenes = $_FILES['imagenes']['tmp_name'];
+        //echo 'files: ';
+        //print_r((empty($_FILES['imagenes'][0])));
+        //print_r($rutaTempImagenes);
+       // br();
+        $this->model->InsertarMateriaImg($nombre, $modalidad, $descripcion, $anio, $division, $rutaTempImagenes{0});
+    }
+
 
     header('Location: ' . HOME);
   }

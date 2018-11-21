@@ -63,9 +63,13 @@ class MateriasModel
         return $destino_final;
     }
 
+    function InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division){
 
+        $sentencia = $this->db->prepare("INSERT INTO materias(nombreMateria, idModalidad, descripcionMateria, anio, division, path1) VALUES(?,?,?,?,?,?)");
+        $sentencia->execute(array($nombre,$modalidad,$descripcion,$anio,$division,null));
+    }
 
-    function InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division,$tempPath){
+    function InsertarMateriaImg($nombre,$modalidad,$descripcion,$anio,$division,$tempPath){
         $path = $this->subirImagen($tempPath);
         $sentencia = $this->db->prepare("INSERT INTO materias(nombreMateria, idModalidad, descripcionMateria, anio, division, path1) VALUES(?,?,?,?,?,?)");
         $sentencia->execute(array($nombre,$modalidad,$descripcion,$anio,$division,$path));
