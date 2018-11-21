@@ -24,7 +24,7 @@ class ConfigApp
       'verificarLogin' => 'LoginController#verificarLogin',
       'register' => 'LoginController#registrarUsuario',
       'agregarUsuario' => 'LoginController#InsertUsuario',
-      'materia' => 'VisitanteController#VerComentarios'
+      'materia' => 'VisitanteController#VerMateria'
 
     ];
 

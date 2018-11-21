@@ -64,6 +64,20 @@ class MateriasModel
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function BorrarComentario($idComentario){
+
+      $sentencia = $this->db->prepare( "delete from comentarios where id=?");
+      //var_dump($sentencia); die();
+      $sentencia->execute(array($idComentario));
+  }
+
+  function InsertarComentario($Comentario, $Puntaje, $idUsuario, $idMateria){
+
+      $sentencia = $this->db->prepare( "INSERT INTO comentarios (comentario, puntaje, idUsuario, idMateria) VALUES(?,?,?,?)");
+      //var_dump($sentencia); die();
+      $sentencia->execute(array($Comentario, $Puntaje, $idUsuario, $idMateria));
+  }
+
 /*
   function GetModalidad($idModalidad){
 

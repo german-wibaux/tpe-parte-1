@@ -7,7 +7,7 @@ fetch('js/templates/comentarios.handlebars')
         getComentarios();
     });
 function getComentarios() {
-  
+
     let loc = window.location;
     let idM = (loc.pathname.substr((loc.pathname.lastIndexOf('/') + 1)-loc.pathname.length));//Obtiene el idMateria de la URL
 
@@ -42,3 +42,8 @@ function mostrarComentarios(jsonTareas) {
 //}
 
 }
+
+
+document.querySelector("#btnAgregar").addEventListener('click', function(){
+  InsertComentario();
+})

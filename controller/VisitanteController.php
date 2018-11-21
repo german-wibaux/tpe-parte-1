@@ -45,14 +45,14 @@ class VisitanteController extends Controller
     $this->view->MostrarModalidad("Mostrar Modalidad", $ModalidadxMateria);
   }
 
-  function VerComentarios($param)
+  function VerMateria($param)
   {
     $id_Materia = $param[0];
 
-    $ComentariosxMateria = $this->model->GetComentario($id_Materia);
+    $materia = $this->model->GetMateria($id_Materia);
 //var_dump($ModalidadxMateria); die();
 
-    $this->view->MostrarComentario("Mostrar Comentarios", $ComentariosxMateria);
+    $this->view->MostrarMateria("Mostrar Materia", $materia);
   }
 }
 

@@ -40,10 +40,10 @@ class VisitanteView
   }
 
 
-  function MostrarComentario($Titulo, $Comentarios){
+  function MostrarMateria($Titulo, $Materia){
 
-    $this->Smarty->assign('Materia:',$Titulo);
-    $this->Smarty->assign('Comentarios: ',$Comentarios);
+    $this->Smarty->assign('Titulo',$Titulo);
+    $this->Smarty->assign('Materia',$Materia);
     $this->Smarty->assign("basehref", $this->basehref);
     $this->Smarty->display('templates/materia.tpl');
   }

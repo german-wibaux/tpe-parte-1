@@ -29,10 +29,19 @@ class MateriasApiController extends Api{
       }
   }
 
-  function DeleteMateria($param = null){
+  function InsertComentario($param = null){
+
+    $objetoJson = $this->json_response();
+    var_dump($objetoJson); die();
+    $r = $this->model->InsertarComentario($objetoJson->nombre, $objetoJson->modalidad, $objetoJson->descripcion, $objetoJson->anio, $objetoJson->division);
+
+    return $this->json_response($r, 200);
+  }
+
+  function DeleteComentario($param = null){
     if(count($param) == 1){
-        $id_materia = $param[0];
-        $r =  $this->model->BorrarMateria($id_materia);
+        $id_comentario = $param[0];
+        $r =  $this->model->BorrarComentario($id_comentario);
         if($r == false){
           return $this->json_response($r, 300);
         }
@@ -43,13 +52,6 @@ class MateriasApiController extends Api{
     }
   }
 
-  function InsertMateria($param = null){
-
-    $objetoJson = $this->getJSONData();
-    $r = $this->model->InsertarMateria($objetoJson->nombre, $objetoJson->modalidad, $objetoJson->descripcion, $objetoJson->anio, $objetoJson->division);
-
-    return $this->json_response($r, 200);
-  }
 
   function UpdateMateria($param = null){
     if(count($param) == 1){
