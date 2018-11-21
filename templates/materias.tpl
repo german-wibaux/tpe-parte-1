@@ -9,7 +9,7 @@
                 <div class="col-6">
 
                     <h2>Alta de Materias</h2>
-                    <form method="post" action="agregar">
+                    <form method="post" action="agregar" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nombreForm">Nombre</label>
                             <input type="text" class="form-control" id="nombreForm" name="nombreForm">
@@ -45,8 +45,12 @@
                                 <option value="3">Tercera</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="imagen">Imagen</label>
+                            <input type="file" id="imagenes" name="imagenes[]">
+                        </div>
 
-                        <button type="submit" class="btn btn-primary">Crear Materia</button>
+                            <button type="submit" class="btn btn-primary">Crear Materia</button>
                     </form>
 
 

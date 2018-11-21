@@ -46,6 +46,9 @@ class MateriasController extends SecuredController
   }
 */
 
+
+
+
   function InsertMateria()
   {
     $nombre = $_POST["nombreForm"];
@@ -55,8 +58,8 @@ class MateriasController extends SecuredController
     $division = $_POST["divisionForm"];
 
 //    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
-
-    $this->model->InsertarMateria($nombre, $modalidad, $descripcion, $anio, $division);
+    $rutaTempImagenes = $_FILES['imagenes']['tmp_name'];
+    $this->model->InsertarMateria($nombre, $modalidad, $descripcion, $anio, $division, $rutaTempImagenes[0]);
 
     header('Location: ' . HOME);
   }
