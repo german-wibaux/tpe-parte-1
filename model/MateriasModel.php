@@ -61,7 +61,7 @@ class MateriasModel
       $sentencia = $this->db->prepare( "select c.*, m.nombreMateria from comentarios c inner join materias m on c.idMateria=m.idMateria where c.idMateria=?");
       //var_dump($sentencia); die();
       $sentencia->execute(array($idMateria));
-      return $sentencia->fetch(PDO::FETCH_ASSOC);
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
 /*
