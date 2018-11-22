@@ -64,10 +64,18 @@ class MateriasModel
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  function GetComentarioSolo($idComentario){
+
+//      $sentencia = $this->db->prepare( "select * from comentarios where idMateria=?");
+      $sentencia = $this->db->prepare( "select * from comentarios where id=?");
+      //var_dump($sentencia); die();
+      $sentencia->execute(array($idComentario));
+      return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
   function BorrarComentario($idComentario){
 
       $sentencia = $this->db->prepare( "delete from comentarios where id=?");
-      //var_dump($sentencia); die();
+      var_dump($sentencia); die();
       $sentencia->execute(array($idComentario));
   }
 

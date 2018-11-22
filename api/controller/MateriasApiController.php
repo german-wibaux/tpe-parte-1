@@ -13,10 +13,16 @@ class MateriasApiController extends Api{
 
   function GetComentarios($param = null){
     if(isset($param)){
+      if(isset($param[1])){
+        $id_comentario = $param[1];
+        $arreglo = $this->model->GetComentarioSolo($id_comentario);
+        $data = $arreglo;
+      }else{
+
         $id_materia = $param[0];
         $arreglo = $this->model->GetComentario($id_materia);
         $data = $arreglo;
-
+      }
     }else{
       $data = $this->model->GetComentarios();
       //var_dump($data); die();
@@ -33,22 +39,16 @@ class MateriasApiController extends Api{
 
     $objetoJson = $this->getJSONData();
     $r = $this->model->InsertarComentario($objetoJson->comentario, $objetoJson->puntaje, $objetoJson->idUsuario, $objetoJson->idMateria);
-    var_dump($r); die();
+    //var_dump($r); die();
     return $this->json_response($r, 200);
   }
 
   function DeleteComentario($param = null){
-    if(count($param) == 1){
-        $id_comentario = $param[0];
-        $r =  $this->model->BorrarComentario($id_comentario);
-        if($r == false){
-          return $this->json_response($r, 300);
-        }
+    $objetoJson = $this->getJSONData();
+    $r = $this->model->BorrarComentario($objetoJson->id);
+    //var_dump($r); die();
+    return $this->json_response($r, 200);
 
-        return $this->json_response($r, 200);
-    }else{
-      return  $this->json_response("No task specified", 300);
-    }
   }
 
 

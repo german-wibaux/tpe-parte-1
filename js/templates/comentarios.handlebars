@@ -1,6 +1,8 @@
  <h5>{{otra}}</h5>
  <ul class="list-group">
   {{#each comentarios}}
-    <li class="list-group-item">{{nombreMateria}} ||  {{comentario}} ------------- {{puntaje}}</li>
+    <li class="list-group-item">{{nombreMateria}} ||  {{comentario}} ------------- {{puntaje}}
+      <button type="button" type="submit" class="btn btn-default" data-id="{{id}}"  onclick="borraComentario()">Eliminar</button>
+</li>
   {{/each}}
 </ul>

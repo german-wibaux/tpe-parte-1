@@ -66,3 +66,15 @@ function creaComentario(){
               .then(r => getComentarios())
               .catch(error => console.log("error"));
 }
+
+function borraComentario(){
+	let idRegistro = this.getAttribute("data-id");
+  console.console.log(idRegistro);
+  fetch("api/comentario/2/" + idRegistro,  {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(comentario)
+              })
+              .then(r => getComentarios())
+              .catch(error => console.log("error"));
+}
