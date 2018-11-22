@@ -37,7 +37,8 @@ CREATE TABLE `materias` (
   `idModalidad` int(11) DEFAULT NULL,
   `descripcionMateria` varchar(255) NOT NULL,
   `anio` int(11) NOT NULL,
-  `division` int(11) NOT NULL
+  `division` int(11) NOT NULL,
+  `path1` varchar(255) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
