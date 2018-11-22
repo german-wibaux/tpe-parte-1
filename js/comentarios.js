@@ -7,7 +7,6 @@ fetch('js/templates/comentarios.handlebars')
         getComentarios();
     });
 function getComentarios() {
-    fetch("api/comentario")
 
 
     let loc = window.location;
