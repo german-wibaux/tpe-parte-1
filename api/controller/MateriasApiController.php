@@ -49,13 +49,16 @@ class MateriasApiController extends Api{
         }
     }
 
-  function DeleteMateria($param = null){
-    if(count($param) == 1){
-        $id_materia = $param[0];
-        $r =  $this->model->BorrarMateria($id_materia);
-        if($r == false){
-          return $this->json_response($r, 300);
-        }
+  function DeleteMateria($param = null)
+  {
+      if (count($param) == 1) {
+          $id_materia = $param[0];
+          $r = $this->model->BorrarMateria($id_materia);
+          if ($r == false) {
+              return $this->json_response($r, 300);
+          }
+      }
+  }
 
   function InsertComentario($param = null){
 
@@ -87,4 +90,6 @@ class MateriasApiController extends Api{
 
   }
 }
- ?>
+
+
+?>
