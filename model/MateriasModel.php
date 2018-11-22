@@ -103,6 +103,84 @@ class MateriasModel
         $sentencia->execute(array(null,$idMateria));
     }
 
+    function GetComentarioSolo($idComentario){
+
+//      $sentencia = $this->db->prepare( "select * from comentarios where idMateria=?");
+        $sentencia = $this->db->prepare( "select * from comentarios where id=?");
+        //var_dump($sentencia); die();
+        $sentencia->execute(array($idComentario));
+        return $sentencia->fetch(PDO::FETCH_ASSOC);
+    }
+    function BorrarComentario($idComentario){
+
+        $sentencia = $this->db->prepare( "delete from comentarios where id=?");
+        var_dump($sentencia); die();
+        $sentencia->execute(array($idComentario));
+    }
+
+    function InsertarComentario($Comentario, $Puntaje, $idUsuario, $idMateria){
+
+        $sentencia = $this->db->prepare( "INSERT INTO comentarios (comentario, puntaje, idUsuario, idMateria) VALUES(?,?,?,?)");
+        //var_dump($sentencia); die();
+        $sentencia->execute(array($Comentario, $Puntaje, $idUsuario, $idMateria));
+    }
+
+    function GetModalidad($idModalidad){
+
+        $sentencia = $this->db->prepare( "select * from modalidad where idModalidad=?");
+        $sentencia->execute(array($idModalidad));
+        return $sentencia->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function InsertarModalidad($nombre){
+
+        $sentencia = $this->db->prepare("INSERT INTO modalidad(nombreModalidad) VALUES(?)");
+        $sentencia->execute(array($nombre));
+    }
+
+    function BorrarModalidad($idModalidad){
+        $sentencia = $this->db->prepare( "delete from modalidad where idModalidad=?");
+        $sentencia->execute(array($idModalidad));
+    }
+
+    function GuardarEditarModalidad($modalidad,$id){
+        $sentencia = $this->db->prepare( "update modalidad set nombreModalidad = ? where idModalidad=?");
+        $sentencia->execute(array($modalidad,$id));
+    }
+
+/*
+=======
+      $sentencia = $this->db->prepare( "select c.*, m.nombreMateria from comentarios c inner join materias m on c.idMateria=m.idMateria where c.idMateria=?");
+      //var_dump($sentencia); die();
+      $sentencia->execute(array($idMateria));
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+
+*/
+/*
+
+*/
+/* function InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division){
+
+   $sentencia = $this->db->prepare("INSERT INTO materias(nombreMateria, idModalidad, descripcionMateria, anio, division) VALUES(?,?,?,?,?)");
+   $sentencia->execute(array($nombre,$modalidad,$descripcion,$anio,$division));
+ }
+
+ function BorrarMateria($idMateria){
+   $sentencia = $this->db->prepare( "delete from materias where idMateria=?");
+   $sentencia->execute(array($idMateria));
+ }
+
+ function GuardarEditarMateria($titulo,$modalidad,$descripcion,$anio,$division,$id){
+   $sentencia = $this->db->prepare( "update materias set nombreMateria = ?, idModalidad = ?,  descripcionMateria = ?, anio = ?, division = ? where idMateria=?");
+   $sentencia->execute(array($titulo,$modalidad,$descripcion,$anio,$division,$id));
+ }
+
+
+
+>>>>>>> ejecucion-linux
+*/
 
 }
 

@@ -6,11 +6,9 @@ class ConfigApi
     public static $PARAMS = 'params';
     public static $RESOURCES = [
       'comentario#GET'=> 'MateriasApiController#GetComentarios',
-      'materia#DELETE'=> 'MateriasApiController#DeleteMateria',
-      'materia#POST'=> 'MateriasApiController#InsertMateria',
-      'materia#PUT'=> 'MateriasApiController#UpdateMateria',
-      'materia#GET'=> 'MateriasApiController#GetComentarios'
-
+      'comentario#DELETE'=> 'MateriasApiController#DeleteComentario',
+      'comentario#POST'=> 'MateriasApiController#InsertComentario',
+      'materia#PUT'=> 'MateriasApiController#UpdateMateria'
     ];
 
 }
