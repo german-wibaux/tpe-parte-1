@@ -77,7 +77,7 @@ function borraComentario(idR){
 //	let idRegistro = this.getAttribute("data-id");
 	let idRegistro = idR;
   console.log("api/comentario/borraComentario/" + idRegistro);
-  fetch("api/comentario/borraComentario/" + idRegistro,  {
+  fetch("api/comentario/" + idRegistro,  {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'}
               })
