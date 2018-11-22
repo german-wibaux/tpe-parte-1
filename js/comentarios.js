@@ -43,11 +43,11 @@ function mostrarComentarios(jsonTareas) {
 //    for (let data of jsonTareas) {
 //      if (idM == data.idMateria){
         //document.querySelector("#comentarios-container").innerHTML += "<p>Materia:" + data.nombreMateria + "</p><p>comentario:" + data.comentario + "</p>";
-        document.querySelector("#comentarios-container").innerHTML += html;
+  //      document.querySelector("#comentarios-container").innerHTML += html;
 //  }
 //}
 
-}
+//}
 
 
 document.querySelector("#btnAgregar").addEventListener('click', function(){
