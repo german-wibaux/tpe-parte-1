@@ -13,7 +13,6 @@ class ConfigApp
       'agregar'=> 'MateriasController#InsertMateria',
       'agregarModalidad'=> 'MateriasController#InsertModalidad',
       'borrar'=> 'MateriasController#BorrarMateria',
-//      'borrarComentario'=> 'MateriasController#BorrarComentario',
       'borrarModalidad'=> 'MateriasController#BorrarModalidad',
       'editar'=> 'MateriasController#EditarMateria',
       'eliminarImagen'=> 'MateriasController#eliminarImagen',

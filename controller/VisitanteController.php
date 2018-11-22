@@ -9,51 +9,56 @@ include_once 'controller/Controller.php';
 
 class VisitanteController extends Controller
 {
-  // private $view;
-  // private $model;
-  private $Titulo;
 
-  function __construct()
-  {
-    parent::__construct();
-    $this->view = new VisitanteView();
-    $this->model = new MateriasModel();
-    $this->modelModalidades = new  ModalidadModel();
-    $this->Titulo = "Visitante";
-  }
+    private $Titulo;
 
-  function HomeMaterias()
-  {
-    $Materias = $this->model->GetMaterias();
-    $this->view->mostrarMaterias($this->Titulo, $Materias);
-  }
+    function __construct()
+    {
+        session_start();
+        parent::__construct();
+        $this->view = new VisitanteView();
+        $this->model = new MateriasModel();
+        $this->modelModalidades = new  ModalidadModel();
+        $this->Titulo = "Visitante";
+    }
 
-  function Home()
-  {
+    function HomeMaterias()
+    {
+        $user = $_SESSION['User'];
+        $Materias = $this->model->GetMaterias();
+        $this->view->mostrarMaterias($this->Titulo, $Materias, $user);
+    }
 
-    $Modalidades = $this->modelModalidades->GetModalidades();
-    $this->view->mostrarHome($this->Titulo, $Modalidades);
-  }
+    function Home()
+    {
+        $user = $_SESSION['User'];
+        $Modalidades = $this->modelModalidades->GetModalidades();
+        $this->view->mostrarHome($this->Titulo, $Modalidades, $user);
+    }
 
-  function VerModalidad($param)
-  {
-    $id_modalidad = $param[0];
+    function VerModalidad($param)
+    {
+        $id_modalidad = $param[0];
 
-    $ModalidadxMateria = $this->modelModalidades->GetMateriaPorModalidad($id_modalidad);
-//var_dump($ModalidadxMateria); die();
+        $ModalidadxMateria = $this->modelModalidades->GetMateriaPorModalidad($id_modalidad);
 
-    $this->view->MostrarModalidad("Mostrar Modalidad", $ModalidadxMateria);
-  }
+        $this->view->MostrarModalidad("Mostrar Modalidad", $ModalidadxMateria);
+    }
 
-  function VerMateria($param)
-  {
-    $id_Materia = $param[0];
+    function VerMateria($param)
+    {
+        $id_Materia = $param[0];
 
-    $materia = $this->model->GetMateria($id_Materia);
-//var_dump($ModalidadxMateria); die();
+        $rol = $_SESSION['Rol'];
 
-    $this->view->MostrarMateria("Mostrar Materia", $materia);
-  }
+        $user = $_SESSION['User'];
+
+        $materia = $this->model->GetMateria($id_Materia);
+
+        $modalidad = $this->model->GetModalidad($materia['idModalidad']);
+
+        $this->view->MostrarMateria("Mostrar Materia", $materia, $modalidad, $rol, $user);
+    }
 }
 
 ?>

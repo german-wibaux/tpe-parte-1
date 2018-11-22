@@ -34,18 +34,23 @@
                     <a class="nav-link" href="{ADMINISTRACION}">Administración</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{LOGIN}">Login</a>
-                </li>
+                {if !{$User} }
+                    <li class="nav-item">
+                        <a class="nav-link" href="{LOGIN}">Login</a>
+                    </li>
+                {/if}
 
+                {if {$User} }
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="{LOGOUT}">Logout </a>
+                    </li>
+                {/if}
 
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="{LOGOUT}">Logout </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{REGISTER}">Registro</a>
-                </li>
+                {if !{$User} }
+                    <li class="nav-item">
+                        <a class="nav-link" href="{REGISTER}">Registro</a>
+                    </li>
+                {/if}
 
 
             </ul>

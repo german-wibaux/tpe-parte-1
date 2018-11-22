@@ -13,7 +13,7 @@ class MateriasController extends SecuredController
 
   function __construct()
   {
-
+      session_start();
     parent::__construct();
 
     $this->view = new MateriasView();
@@ -22,10 +22,11 @@ class MateriasController extends SecuredController
     $this->Titulo = "Lista de Materias";
   }
 
+
+
   function Home()
   {
 
-    $Materias = $this->model->GetMaterias();
     $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->Home($this->Titulo, $Modalidades);
 
@@ -33,9 +34,10 @@ class MateriasController extends SecuredController
 
   function Materias()
   {
+    $user = $_SESSION['User'];
     $Materias = $this->model->GetMaterias();
     $Modalidades = $this->modelModalidades->GetModalidades();
-    $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades);
+    $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades, $user);
   }
 
   function InsertMateria()
@@ -69,7 +71,8 @@ class MateriasController extends SecuredController
 
     $Materia = $this->model->GetMateria($id_materia);
     $Modalidades = $this->modelModalidades->GetModalidades();
-    $this->view->MostrarEditarMateria("Editar Materia", $Materia, $Modalidades);
+    $user = $_SESSION['Rol'];
+    $this->view->MostrarEditarMateria("Editar Materia", $Materia, $Modalidades, $user);
   }
 
   function GuardarEditarMateria()

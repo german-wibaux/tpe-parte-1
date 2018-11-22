@@ -16,7 +16,6 @@
             <li><a class="mod" href="MostrarModalidad/{$modalidad['idModalidad']}">{$modalidad['nombreModalidad']}</a></li>
         {/foreach}
         Finaliza la secundaria en el Centro Educativo de Nivel Secundario más cercano a tu domicilio.
-
     </div>
 
 

@@ -40,7 +40,6 @@
 
                             <p><a href="materia/{$materia['idMateria']}">{$materia['nombreMateria']}</a></p>
 
-<!--                              <div id="comentarios-container_{$materia['idMateria']}" class="container">-->
 
 
                           </div>

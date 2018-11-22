@@ -105,7 +105,7 @@ a {
 }
 
 a.accordion {
-  color: #962020;
+  color: black;
   cursor:pointer;
 }
 
@@ -257,5 +257,9 @@ padding : 0;
    opacity:88%;
 }
 /* Fin Estilos del navegador*/
+
+.back {
+  color: red;
+}
 
 
