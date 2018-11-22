@@ -59,7 +59,7 @@ class MateriasModel
         $sentencia = $this->db->prepare( "select c.*, m.nombreMateria from comentarios c inner join materias m on c.idMateria=m.idMateria where c.idMateria=?");
         //var_dump($sentencia); die();
         $sentencia->execute(array($idMateria));
-        return $sentencia->fetch(PDO::FETCH_ASSOC);
+        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
@@ -111,12 +111,23 @@ class MateriasModel
         $sentencia->execute(array($idComentario));
         return $sentencia->fetch(PDO::FETCH_ASSOC);
     }
+//    function BorrarComentario($idComentario){
+
+//        $sentencia = $this->db->prepare( "delete from comentarios where id=?");
+//        var_dump($sentencia); die();
+//        $sentencia->execute(array($idComentario));
+//    }
+
     function BorrarComentario($idComentario){
 
+      $tarea = $this->GetComentarioSolo($idComentario);
+      if(isset($tarea)){
         $sentencia = $this->db->prepare( "delete from comentarios where id=?");
-        var_dump($sentencia); die();
         $sentencia->execute(array($idComentario));
+        return $tarea;
+      }
     }
+
 
     function InsertarComentario($Comentario, $Puntaje, $idUsuario, $idMateria){
 

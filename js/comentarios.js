@@ -72,15 +72,15 @@ function creaComentario(){
               .catch(error => console.log("error"));
 }
 
-function borraComentario(){
-	let idRegistro = this.getAttribute("data-id");
-  console.console.log(idRegistro);
-  fetch("api/comentario/2/" + idRegistro,  {
+function borraComentario(idR){
+  console.log("idRegistro:" + idR);
+//	let idRegistro = this.getAttribute("data-id");
+	let idRegistro = idR;
+  console.log("api/comentario/borraComentario/" + idRegistro);
+  fetch("api/comentario/borraComentario/" + idRegistro,  {
                 method: 'DELETE',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(comentario)
+                headers: {'Content-Type': 'application/json'}
               })
               .then(r => getComentarios())
               .catch(error => console.log("error"));
 }
-

@@ -68,14 +68,26 @@ class MateriasApiController extends Api{
     return $this->json_response($r, 200);
   }
 
+//  function DeleteComentario($param = null){
+//    $objetoJson = $this->getJSONData();
+//    $r = $this->model->BorrarComentario($objetoJson->id);
+//    //var_dump($r); die();
+//    return $this->json_response($r, 200);
+//  }
+
   function DeleteComentario($param = null){
-    $objetoJson = $this->getJSONData();
-    $r = $this->model->BorrarComentario($objetoJson->id);
-    //var_dump($r); die();
-    return $this->json_response($r, 200);
+    if(count($param) == 1){
+        $id_comentario = $param[0];
+        $r =  $this->model->BorrarComentario($id_comentario);
+        if($r == false){
+          return $this->json_response($r, 300);
+        }
 
+        return $this->json_response($r, 200);
+    }else{
+      return  $this->json_response("No task specified", 300);
+    }
   }
-
 
   function UpdateMateria($param = null){
     if(count($param) == 1){

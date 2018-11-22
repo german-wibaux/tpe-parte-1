@@ -9,8 +9,6 @@
     <div class="caja">
       <div id="contenido" class="container">
         <p>Descripcion: {$Materia['descripcionMateria'] }</p>
-          <p>Año: {$Materia['anio'] }</p>
-        <p>Division: {$Materia['division'] }</p>
 
           {if  {$Materia["path1"]} != null }
               <img class="mat" src="{$Materia['path1']}">
