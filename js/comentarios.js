@@ -45,5 +45,24 @@ function mostrarComentarios(jsonTareas) {
 
 
 document.querySelector("#btnAgregar").addEventListener('click', function(){
-  InsertComentario();
+  creaComentario();
 })
+
+function creaComentario(){
+  let loc = window.location;
+  let idM = (loc.pathname.substr((loc.pathname.lastIndexOf('/') + 1)-loc.pathname.length));//Obtiene el idMateria de la URL
+
+  let comentario = {
+    "comentario": document.querySelector("#txtComentarios").value,
+    "puntaje": document.querySelector("#selPuntaje").value,
+    "idMateria": idM,//document.querySelector(".admin").getAttribute("data-nombre"),
+    "idUsuario": 15
+  }
+  fetch("api/comentario/",  {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(comentario)
+              })
+              .then(r => getComentarios())
+              .catch(error => console.log("error"));
+}

@@ -16,7 +16,7 @@
       <div id="comentarios-container" class="container">
 
       </div>
-
+      <form id="formulario" method="post">
       <div id="agregar-comentario" class="container">
         Agregue sus comentarios
         <div class="row">
@@ -35,11 +35,12 @@
           </div>
         </div>
 
-        <button type="button" class="btn btn-default" id="btnAgregar">Enviar</button>
+        <button type="button" type="submit" class="btn btn-default" id="btnAgregar">Enviar</button>
         <!-- Final fila -->
 
 
       </div>
+      </form>
 
     </div>
   </div>

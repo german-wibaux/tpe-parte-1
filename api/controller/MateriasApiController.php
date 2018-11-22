@@ -31,10 +31,9 @@ class MateriasApiController extends Api{
 
   function InsertComentario($param = null){
 
-    $objetoJson = $this->json_response();
-    var_dump($objetoJson); die();
-    $r = $this->model->InsertarComentario($objetoJson->nombre, $objetoJson->modalidad, $objetoJson->descripcion, $objetoJson->anio, $objetoJson->division);
-
+    $objetoJson = $this->getJSONData();
+    $r = $this->model->InsertarComentario($objetoJson->comentario, $objetoJson->puntaje, $objetoJson->idUsuario, $objetoJson->idMateria);
+    var_dump($r); die();
     return $this->json_response($r, 200);
   }
 
