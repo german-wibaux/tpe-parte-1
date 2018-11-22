@@ -38,6 +38,13 @@ class MateriasModel
         return $sentencia->fetch(PDO::FETCH_ASSOC);
     }
 
+    function GetPath1($idMateria){
+
+        $sentencia = $this->db->prepare( "select path1 from materias where idMateria=?");
+        $sentencia->execute(array($idMateria));
+        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function GetComentarios(){
 
         //      $sentencia = $this->db->prepare( "select * from materias");
@@ -83,6 +90,12 @@ class MateriasModel
     function GuardarEditarMateria($titulo,$modalidad,$descripcion,$anio,$division,$id){
         $sentencia = $this->db->prepare( "update materias set nombreMateria = ?, idModalidad = ?,  descripcionMateria = ?, anio = ?, division = ? where idMateria=?");
         $sentencia->execute(array($titulo,$modalidad,$descripcion,$anio,$division,$id));
+    }
+
+    function GuardarEditarMateriaImg($titulo,$modalidad,$descripcion,$anio,$division, $tempPath,$id){
+        $path = $this->subirImagen($tempPath);
+        $sentencia = $this->db->prepare( "update materias set nombreMateria = ?, idModalidad = ?,  descripcionMateria = ?, anio = ?, division = ?, path1 = ? where idMateria=?");
+        $sentencia->execute(array($titulo,$modalidad,$descripcion,$anio,$division,$path,$id));
     }
 
 

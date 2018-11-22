@@ -11,6 +11,10 @@
         <p>Descripcion: {$Materia['descripcionMateria'] }</p>
           <p>Año: {$Materia['anio'] }</p>
         <p>Division: {$Materia['division'] }</p>
+
+          {if  {$Materia["path1"]} != null }
+              <img class="mat" src="{$Materia['path1']}">
+          {/if}
       </div>
       <div id="comentarios-container" class="container">
 

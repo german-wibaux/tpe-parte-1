@@ -37,17 +37,6 @@ class MateriasController extends SecuredController
     $Modalidades = $this->modelModalidades->GetModalidades();
     $this->view->MostrarMaterias($this->Titulo, $Materias, $Modalidades);
   }
-/*
-  function Modalidades()
-  {
-    $Modalidades = $this->modelModalidades->GetModalidades();
-    $this->view->Mostrar($this->Titulo, $Modalidades);
-
-  }
-*/
-
-
-
 
   function InsertMateria()
   {
@@ -57,27 +46,21 @@ class MateriasController extends SecuredController
     $anio = $_POST["anioForm"];
     $division = $_POST["divisionForm"];
 
-//    $this->model->InsertarMateria($nombre,$modalidad,$descripcion,$anio,$division);
-    if(!(empty($_FILES['imagenes'][0]))){
+    if(empty($_FILES['imagenes']['name'][0])){
         $this->model->InsertarMateria($nombre, $modalidad, $descripcion, $anio, $division);
-        //printf($_FILES);
     } else {
         $rutaTempImagenes = $_FILES['imagenes']['tmp_name'];
-        //echo 'files: ';
-        //print_r((empty($_FILES['imagenes'][0])));
-        //print_r($rutaTempImagenes);
-       // br();
         $this->model->InsertarMateriaImg($nombre, $modalidad, $descripcion, $anio, $division, $rutaTempImagenes{0});
     }
 
 
-    header('Location: ' . HOME);
+   header('Location: ' . ADMINISTRACION);
   }
 
   function BorrarMateria($param)
   {
     $this->model->BorrarMateria($param[0]);
-    header("Location: http://" . $_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
+    header('Location: ' . ADMINISTRACION);
   }
 
   function EditarMateria($param)
@@ -99,9 +82,17 @@ class MateriasController extends SecuredController
     $anio = $_POST["anioForm"];
     $division = $_POST["divisionForm"];
 
-    $this->model->GuardarEditarMateria($titulo, $modalidad, $descripcion, $anio, $division, $id_materia);
+      if(empty($_FILES['imagenes']['name'][0])){
+          $this->model->GuardarEditarMateria($titulo, $modalidad, $descripcion, $anio, $division, $id_materia);
+      } else {
+          $pathBorrar = $this->model->GetPath1($id_materia);
+          unlink($pathBorrar[0]['path1']);
+          $rutaTempImagenes = $_FILES['imagenes']['tmp_name'];
+          $this->model->GuardarEditarMateriaImg($titulo, $modalidad, $descripcion, $anio, $division, $rutaTempImagenes{0}, $id_materia);
+      }
 
-    header("Location: " . HOME);
+
+    header("Location: " . ADMINISTRACION);
   }
 
   function InsertModalidad()
