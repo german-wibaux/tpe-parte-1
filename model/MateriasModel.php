@@ -98,6 +98,11 @@ class MateriasModel
         $sentencia->execute(array($titulo,$modalidad,$descripcion,$anio,$division,$path,$id));
     }
 
+    function EliminarImagenPath1 ($idMateria) {
+        $sentencia = $this->db->prepare( "update materias set path1 = ? where idMateria=?");
+        $sentencia->execute(array(null,$idMateria));
+    }
+
 
 }
 

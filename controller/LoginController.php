@@ -54,7 +54,6 @@ class LoginController extends Controller
         $_SESSION["Rol"] = $dbUser[0]['rol'];
         $_SESSION["User"] = $user;
         $_SESSION['LAST_ACTIVITY'] = time();
-        //print_r($_SESSION["Rol"]);
         header("Location: " . HOME);
         die();
       } else {

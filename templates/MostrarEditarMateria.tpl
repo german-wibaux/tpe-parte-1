@@ -6,7 +6,7 @@
     <div class="container">
       <div class="caja">
         <h2>Editar Materias</h2>
-        <form method="post" action="{HOME}/guardarEditar" enctype="multipart/form-data" >
+        <form method="post" action="guardarEditar" enctype="multipart/form-data" >
           <input type="hidden" class="form-control" id="idForm" name="idForm" value="{$Materia["idMateria"]}">
           <div class="form-group">
             <label for="tituloForm">Nombre materia</label>
@@ -74,10 +74,14 @@
                 <br>
                 {if  {$Materia["path1"]} != null }
                 <a href="{$Materia["path1"]}" target="_blank" >Imagen 1</a>
-                {/if}
+
                 <div>
 
+                    <p><a href="eliminarImagen/{$Materia['idMateria']}" >Eliminar imagen</a></p>
                 </div>
+
+                {/if}
+
             </div>
 
           <button type="submit" class="btn btn-primary">Editar Materia</button>

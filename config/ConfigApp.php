@@ -15,6 +15,7 @@ class ConfigApp
       'borrar'=> 'MateriasController#BorrarMateria',
       'borrarModalidad'=> 'MateriasController#BorrarModalidad',
       'editar'=> 'MateriasController#EditarMateria',
+        'eliminarImagen'=> 'MateriasController#eliminarImagen',
       'guardarEditar'=> 'MateriasController#GuardarEditarMateria',
       'editarModalidad'=> 'MateriasController#EditarModalidad',
       'MostrarModalidad'=> 'VisitanteController#VerModalidad',

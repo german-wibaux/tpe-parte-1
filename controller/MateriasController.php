@@ -128,7 +128,15 @@ class MateriasController extends SecuredController
   }
 
 
-
+  function eliminarImagen($param)
+  {
+      $id_materia = $param[0];
+      $pathBorrar = $this->model->GetPath1($id_materia);
+      //echo $pathBorrar[0]['path1'];
+      unlink($pathBorrar[0]['path1']);
+      $this->model->EliminarImagenPath1($id_materia);
+      header("Location: " . HOME . "editar/" . $id_materia);
+  }
 
 }
 
